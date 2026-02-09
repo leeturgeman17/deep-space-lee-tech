@@ -15,7 +15,7 @@
     --popover: 0 0% 6%;
     --popover-foreground: 0 0% 90%;
 
-    --primary: 18 100% 50%;
+    --primary: 50 100% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 10%;
@@ -24,7 +24,7 @@
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 55%;
 
-    --accent: 18 100% 50%;
+    --accent: 50 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,24 +32,24 @@
 
     --border: 0 0% 15%;
     --input: 0 0% 12%;
-    --ring: 18 100% 50%;
+    --ring: 50 100% 50%;
 
     --radius: 0.75rem;
 
-    --copper-start: 18 100% 50%;
-    --copper-end: 24 100% 53%;
+    --copper-start: 50 100% 50%;
+    --copper-end: 55 100% 53%;
     --silver: 0 0% 88%;
     --glass-bg: 0 0% 8%;
     --glass-border: 0 0% 18%;
 
     --sidebar-background: 0 0% 4%;
     --sidebar-foreground: 0 0% 88%;
-    --sidebar-primary: 18 100% 50%;
+    --sidebar-primary: 50 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 88%;
     --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 18 100% 50%;
+    --sidebar-ring: 50 100% 50%;
   }
 }
 
@@ -78,7 +78,7 @@
   }
 
   .glass-card:hover {
-    border-color: hsla(18, 100%, 50%, 0.5);
+    border-color: hsla(50, 100%, 50%, 0.5);
   }
 
   .copper-gradient-text {

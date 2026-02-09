@@ -14,10 +14,10 @@ const Starfield = () => {
   }, []);
 
   const nebulas = useMemo(() => [
-    { left: "10%", top: "20%", size: 500, color: "hsla(18, 100%, 50%, 0.04)", delay: "0s" },
+    { left: "10%", top: "20%", size: 500, color: "hsla(50, 100%, 50%, 0.04)", delay: "0s" },
     { left: "75%", top: "50%", size: 400, color: "hsla(240, 60%, 50%, 0.03)", delay: "2s" },
     { left: "40%", top: "75%", size: 600, color: "hsla(280, 50%, 40%, 0.03)", delay: "4s" },
-    { left: "85%", top: "10%", size: 300, color: "hsla(18, 80%, 50%, 0.03)", delay: "1s" },
+    { left: "85%", top: "10%", size: 300, color: "hsla(50, 80%, 50%, 0.03)", delay: "1s" },
   ], []);
 
   return (
