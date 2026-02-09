@@ -87,10 +87,10 @@ const ServiceCard = ({
   return (
     <motion.div
       custom={index}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60, scale: 0.95 }}
+      whileInView={{ opacity: 1, x: 0, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
+      transition={{ type: "spring", damping: 20, stiffness: 150, delay: index * 0.15 }}
       className="glass-card overflow-hidden"
     >
       {/* Card Header */}

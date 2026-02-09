@@ -28,11 +28,11 @@ const ExpressServices = () => {
           {services.map((s, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30, rotate: -3 }}
+              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -4, borderColor: "hsl(18, 100%, 50%)" }}
+              transition={{ type: "spring", damping: 15, stiffness: 200, delay: i * 0.12 }}
+              whileHover={{ y: -6, scale: 1.03, borderColor: "hsl(18, 100%, 50%)" }}
               className="glass-card p-5 text-center cursor-default"
             >
               <div className="w-10 h-10 rounded-xl copper-gradient-bg flex items-center justify-center mx-auto mb-3">

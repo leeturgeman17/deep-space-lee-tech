@@ -53,10 +53,10 @@ const StatsStrip = () => {
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 40, rotateX: 45 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
+                transition={{ type: "spring", damping: 12, stiffness: 150, delay: i * 0.2 }}
                 className="text-center"
               >
                 <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />

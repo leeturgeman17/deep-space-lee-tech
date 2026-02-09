@@ -47,26 +47,29 @@ const FAQSection = () => {
           <span className="copper-gradient-text">שאלות נפוצות</span>
         </motion.h2>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="glass-card p-6 md:p-8"
-        >
-          <Accordion type="single" collapsible className="space-y-0">
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-border/30">
-                <AccordionTrigger className="text-base md:text-lg font-bold text-foreground hover:text-primary hover:no-underline text-right py-5">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </motion.div>
+        <div className="space-y-3">
+          {faqs.map((faq, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="glass-card p-0"
+            >
+              <Accordion type="single" collapsible>
+                <AccordionItem value={`faq-${i}`} className="border-none">
+                  <AccordionTrigger className="text-base md:text-lg font-bold text-foreground hover:text-primary hover:no-underline text-right py-5 px-6">
+                    {faq.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground text-base leading-relaxed px-6 pb-5">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
