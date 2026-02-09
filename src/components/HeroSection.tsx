@@ -13,18 +13,18 @@ const HeroSection = () => {
           transition={{ duration: 1, type: "spring", damping: 10, stiffness: 100 }}
           className="mb-6 relative inline-block"
         >
-          {/* Realistic fire base glow */}
+          {/* Subtle fire base glow - blends with background */}
           <motion.div
             className="absolute inset-0 z-0"
             animate={{
               background: [
-                "radial-gradient(ellipse at center bottom, hsla(18,100%,50%,0.3) 0%, transparent 60%)",
-                "radial-gradient(ellipse at center bottom, hsla(25,100%,55%,0.5) 0%, transparent 70%)",
-                "radial-gradient(ellipse at center bottom, hsla(18,100%,50%,0.3) 0%, transparent 60%)",
+                "radial-gradient(ellipse at center bottom, hsla(18,100%,50%,0.1) 0%, transparent 50%)",
+                "radial-gradient(ellipse at center bottom, hsla(25,100%,55%,0.18) 0%, transparent 55%)",
+                "radial-gradient(ellipse at center bottom, hsla(18,100%,50%,0.1) 0%, transparent 50%)",
               ],
             }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            style={{ filter: "blur(20px)", transform: "scale(1.5)" }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            style={{ filter: "blur(30px)", transform: "scale(1.3)" }}
           />
 
           {/* Outer fire ring - large flames */}
@@ -92,9 +92,9 @@ const HeroSection = () => {
             className="h-24 sm:h-32 md:h-40 w-auto mx-auto relative z-10"
             animate={{
               filter: [
-                "drop-shadow(0 0 15px hsla(18,100%,50%,0.4)) drop-shadow(0 5px 30px hsla(18,100%,50%,0.2))",
-                "drop-shadow(0 0 40px hsla(18,100%,50%,0.8)) drop-shadow(0 5px 60px hsla(18,100%,50%,0.5))",
-                "drop-shadow(0 0 15px hsla(18,100%,50%,0.4)) drop-shadow(0 5px 30px hsla(18,100%,50%,0.2))",
+                "drop-shadow(0 0 8px hsla(18,100%,50%,0.15)) drop-shadow(0 3px 15px hsla(18,100%,50%,0.08))",
+                "drop-shadow(0 0 20px hsla(18,100%,50%,0.3)) drop-shadow(0 3px 30px hsla(18,100%,50%,0.15))",
+                "drop-shadow(0 0 8px hsla(18,100%,50%,0.15)) drop-shadow(0 3px 15px hsla(18,100%,50%,0.08))",
               ],
             }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
