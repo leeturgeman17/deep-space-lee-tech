@@ -119,7 +119,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-sm md:text-lg text-muted-foreground mb-8 max-w-md mx-auto leading-relaxed px-2"
+          className="text-sm md:text-lg text-foreground font-bold mb-8 max-w-md mx-auto leading-relaxed px-2"
         >
           העסק שלך על טייס אוטומטי. חשיפה חכמה, שירות 24/7, ונכסים דיגיטליים שבאמת מוכרים.
         </motion.p>
