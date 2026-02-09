@@ -19,7 +19,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <SiteLoader />
-      <Starfield />
+      {/* <Starfield /> */}
       <Header />
       <main>
         <HeroSection />
