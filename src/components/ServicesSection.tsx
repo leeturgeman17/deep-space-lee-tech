@@ -121,14 +121,14 @@ const ServiceCard = ({
 const ServicesSection = () => {
   return (
     <ParallaxBg variant="glow">
-      <section id="services" className="relative py-16 px-4">
+      <section id="services" className="relative py-10 px-4">
         <div className="container max-w-lg mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-3xl font-black mb-8 text-center"
+            className="text-2xl sm:text-3xl font-black mb-6 text-center"
           >
             <span className="copper-gradient-text">המסלולים שלנו</span>
           </motion.h2>

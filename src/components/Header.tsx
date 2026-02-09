@@ -29,6 +29,10 @@ const Header = () => {
     el?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <header
@@ -51,22 +55,33 @@ const Header = () => {
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* Logo */}
-          <img
-            src={logo}
-            alt="LeeTech"
-            className="h-10 w-auto cursor-pointer md:hidden"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          />
-
-          {/* Desktop nav - centered */}
-          <nav className="hidden md:flex items-center gap-6">
+          {/* Logo - mobile */}
+          <a
+            href="#"
+            onClick={(e) => { e.preventDefault(); scrollToTop(); }}
+            className="md:hidden"
+            aria-label="חזרה לדף הראשי"
+          >
             <img
               src={logo}
               alt="LeeTech"
-              className="h-9 w-auto cursor-pointer"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="h-12 w-auto cursor-pointer hover:opacity-80 transition-opacity"
             />
+          </a>
+
+          {/* Desktop nav - centered */}
+          <nav className="hidden md:flex items-center gap-6">
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); scrollToTop(); }}
+              aria-label="חזרה לדף הראשי"
+            >
+              <img
+                src={logo}
+                alt="LeeTech"
+                className="h-11 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+              />
+            </a>
             <div className="h-6 w-px bg-border/40" />
             {navItems.map((item) => (
               <button

@@ -28,8 +28,22 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Social icons */}
-        <div className="flex justify-center gap-4">
+        {/* Copyright */}
+        <p className="text-muted-foreground text-sm">
+          © 2026 <span className="copper-gradient-text font-bold">LeeTech</span>
+        </p>
+
+        <div className="flex justify-center gap-4 text-xs text-muted-foreground/60">
+          <span className="hover:text-primary cursor-pointer transition-colors">הצהרת נגישות</span>
+          <span>|</span>
+          <span className="hover:text-primary cursor-pointer transition-colors">מדיניות פרטיות</span>
+        </div>
+
+        {/* בשם ה */}
+        <p className="text-xs text-muted-foreground/50 mt-2">בשם ה׳ נעשה ונצליח</p>
+
+        {/* Social icons - at bottom */}
+        <div className="flex justify-center gap-4 pt-2">
           {socials.map((s) => (
             <a
               key={s.label}
@@ -37,21 +51,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center hover:bg-primary/10 hover:border-primary/60 transition-colors"
+              className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center hover:bg-primary/10 hover:border-primary/60 transition-colors"
             >
               <s.icon className="w-4 h-4 text-primary" />
             </a>
           ))}
-        </div>
-
-        {/* Copyright */}
-        <p className="text-muted-foreground text-sm">
-          © 2026 <span className="copper-gradient-text font-bold">LeeTech</span>
-        </p>
-        <div className="flex justify-center gap-4 text-xs text-muted-foreground/60">
-          <span className="hover:text-primary cursor-pointer transition-colors">הצהרת נגישות</span>
-          <span>|</span>
-          <span className="hover:text-primary cursor-pointer transition-colors">מדיניות פרטיות</span>
         </div>
       </div>
     </footer>
