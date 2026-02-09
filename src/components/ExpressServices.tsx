@@ -20,7 +20,7 @@ const ExpressServices = () => {
           viewport={{ once: true }}
           className="text-xl sm:text-2xl font-bold text-center mb-1"
         >
-          <span className="copper-gradient-text">שירותי Spotlight</span>
+          <span className="copper-gradient-text">שירותי Express</span>
         </motion.h2>
         <p className="text-center text-muted-foreground text-xs mb-8">
           מהיר · חד · בלי התחייבות
