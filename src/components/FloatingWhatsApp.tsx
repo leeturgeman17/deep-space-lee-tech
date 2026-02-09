@@ -11,7 +11,7 @@ const FloatingWhatsApp = () => {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 2.5, type: "spring", stiffness: 200 }}
-      className="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 transition-transform group"
+      className="fixed bottom-6 left-20 z-50 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-110 transition-transform group"
     >
       {/* pulse ring */}
       <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />

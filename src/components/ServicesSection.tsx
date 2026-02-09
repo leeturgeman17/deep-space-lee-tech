@@ -96,18 +96,18 @@ const ServiceCard = ({
     >
       {/* Card Header */}
       <div
-        className="p-8 md:p-10 cursor-pointer"
+        className="p-5 md:p-10 cursor-pointer"
         onClick={() => setExpanded(!expanded)}
       >
         <div className="flex items-start gap-5">
-          <div className="shrink-0 inline-flex items-center justify-center w-16 h-16 rounded-2xl copper-gradient-bg">
-            <service.icon className="w-8 h-8 text-primary-foreground" />
+          <div className="shrink-0 inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl copper-gradient-bg">
+            <service.icon className="w-6 h-6 md:w-8 md:h-8 text-primary-foreground" />
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="text-2xl md:text-3xl font-bold copper-gradient-text mb-1">
+            <h3 className="text-lg md:text-3xl font-bold copper-gradient-text mb-1">
               {service.title}
             </h3>
-            <p className="text-base md:text-lg text-foreground/70 font-medium">
+            <p className="text-sm md:text-lg text-foreground/70 font-medium">
               {service.subtitle}
             </p>
           </div>
@@ -131,7 +131,7 @@ const ServiceCard = ({
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className="overflow-hidden"
       >
-        <div className="px-8 md:px-10 pb-8 md:pb-10 pt-0">
+        <div className="px-5 md:px-10 pb-6 md:pb-10 pt-0">
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 border-t border-border/30 pt-6">
             {service.description}
           </p>
@@ -178,7 +178,7 @@ const ServicesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-black mb-16 text-center"
+          className="text-3xl md:text-5xl font-black mb-10 md:mb-16 text-center"
         >
           <span className="copper-gradient-text">המסלולים שלנו</span>
         </motion.h2>

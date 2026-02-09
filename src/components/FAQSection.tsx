@@ -42,7 +42,7 @@ const FAQSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-black mb-16 text-center"
+          className="text-3xl md:text-5xl font-black mb-10 md:mb-16 text-center"
         >
           <span className="copper-gradient-text">שאלות נפוצות</span>
         </motion.h2>
@@ -59,10 +59,10 @@ const FAQSection = () => {
             >
               <Accordion type="single" collapsible>
                 <AccordionItem value={`faq-${i}`} className="border-none">
-                  <AccordionTrigger className="text-base md:text-lg font-bold text-foreground hover:text-primary hover:no-underline text-right py-5 px-6">
+                  <AccordionTrigger className="text-sm md:text-lg font-bold text-foreground hover:text-primary hover:no-underline text-right py-4 px-4 md:px-6">
                     {faq.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base leading-relaxed px-6 pb-5">
+                  <AccordionContent className="text-muted-foreground text-sm md:text-base leading-relaxed px-4 md:px-6 pb-4 md:pb-5">
                     {faq.a}
                   </AccordionContent>
                 </AccordionItem>

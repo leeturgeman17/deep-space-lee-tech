@@ -51,7 +51,7 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold mb-12 text-center"
+          className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 text-center"
         >
           <span className="copper-gradient-text">דברו איתנו</span>
         </motion.h2>
@@ -62,7 +62,7 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="glass-card p-8 md:p-10 space-y-5"
+          className="glass-card p-5 md:p-10 space-y-4 md:space-y-5"
         >
           <div className="relative">
             <User className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
