@@ -4,16 +4,20 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import ExpressServices from "@/components/ExpressServices";
 import StatsStrip from "@/components/StatsStrip";
+import WhyLeeTech from "@/components/WhyLeeTech";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import FAQSection from "@/components/FAQSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import SiteLoader from "@/components/SiteLoader";
 
 const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
+      <SiteLoader />
       <Starfield />
       <Header />
       <main>
@@ -21,12 +25,14 @@ const Index = () => {
         <ServicesSection />
         <ExpressServices />
         <StatsStrip />
+        <WhyLeeTech />
         <ProcessTimeline />
         <FAQSection />
         <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />
+      <FloatingWhatsApp />
       <AccessibilityWidget />
     </div>
   );
