@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Phone, User, MessageSquare } from "lucide-react";
+import ParallaxBg from "./ParallaxBg";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
@@ -42,6 +43,7 @@ const ContactSection = () => {
   };
 
   return (
+    <ParallaxBg variant="rings">
     <section id="contact" className="relative py-24 px-4">
       <div className="container max-w-xl">
         <motion.h2
@@ -110,6 +112,7 @@ const ContactSection = () => {
         </motion.form>
       </div>
     </section>
+    </ParallaxBg>
   );
 };
 

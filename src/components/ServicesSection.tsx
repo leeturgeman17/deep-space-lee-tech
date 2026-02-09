@@ -1,6 +1,7 @@
 import { Target, Infinity, Brain, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import ParallaxBg from "./ParallaxBg";
 
 const services = [
   {
@@ -169,6 +170,7 @@ const ServiceCard = ({
 
 const ServicesSection = () => {
   return (
+    <ParallaxBg variant="glow">
     <section id="services" className="relative py-24 px-4">
       <div className="container max-w-4xl">
         <motion.h2
@@ -188,6 +190,7 @@ const ServicesSection = () => {
         </div>
       </div>
     </section>
+    </ParallaxBg>
   );
 };
 
