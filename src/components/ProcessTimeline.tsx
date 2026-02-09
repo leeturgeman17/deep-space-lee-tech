@@ -18,7 +18,7 @@ const ProcessTimeline = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-black mb-16 text-center"
+          className="text-3xl md:text-5xl font-black mb-10 md:mb-16 text-center"
         >
           <span className="copper-gradient-text">איך זה עובד?</span>
         </motion.h2>
@@ -39,9 +39,9 @@ const ProcessTimeline = () => {
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="w-24 h-24 rounded-full copper-gradient-bg copper-glow flex items-center justify-center mb-5 relative z-10"
+                className="w-16 h-16 md:w-24 md:h-24 rounded-full copper-gradient-bg copper-glow flex items-center justify-center mb-4 md:mb-5 relative z-10"
               >
-                <step.icon className="w-10 h-10 text-primary-foreground" />
+                <step.icon className="w-7 h-7 md:w-10 md:h-10 text-primary-foreground" />
               </motion.div>
               <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
               <p className="text-muted-foreground text-sm max-w-[200px]">{step.desc}</p>

@@ -60,7 +60,7 @@ const StatsStrip = () => {
                 className="text-center"
               >
                 <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-4xl md:text-5xl font-black copper-gradient-text mb-2">
+                <div className="text-3xl md:text-5xl font-black copper-gradient-text mb-2">
                   <CountUp target={stat.value} suffix={stat.suffix} />
                 </div>
                 <p className="text-muted-foreground text-sm font-medium">{stat.label}</p>
