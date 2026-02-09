@@ -1,4 +1,4 @@
-import { MessageCircle, Flame } from "lucide-react";
+import { Flame } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@/assets/leetech-logo-new.png";
 
@@ -6,33 +6,84 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center pt-20 pb-6 px-4">
       <div className="text-center max-w-lg mx-auto">
-        {/* Animated Logo with flame effect */}
+        {/* Animated Logo with burning bush fire effect */}
         <motion.div
           initial={{ opacity: 0, scale: 0, rotate: -180 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 1, type: "spring", damping: 10, stiffness: 100 }}
-          className="mb-6 relative"
+          className="mb-6 relative inline-block"
         >
-          {/* Flame particles */}
-          {[...Array(6)].map((_, i) => (
+          {/* Realistic fire base glow */}
+          <motion.div
+            className="absolute inset-0 z-0"
+            animate={{
+              background: [
+                "radial-gradient(ellipse at center bottom, hsla(18,100%,50%,0.3) 0%, transparent 60%)",
+                "radial-gradient(ellipse at center bottom, hsla(25,100%,55%,0.5) 0%, transparent 70%)",
+                "radial-gradient(ellipse at center bottom, hsla(18,100%,50%,0.3) 0%, transparent 60%)",
+              ],
+            }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            style={{ filter: "blur(20px)", transform: "scale(1.5)" }}
+          />
+
+          {/* Outer fire ring - large flames */}
+          {[...Array(10)].map((_, i) => (
             <motion.div
-              key={i}
-              className="absolute left-1/2 top-1/2"
+              key={`outer-${i}`}
+              className="absolute"
+              style={{
+                left: `${30 + Math.sin(i * 0.628) * 40}%`,
+                bottom: `${10 + Math.cos(i * 0.9) * 15}%`,
+              }}
               animate={{
-                y: [0, -60 - i * 10, -80 - i * 15],
-                x: [0, (i % 2 === 0 ? 1 : -1) * (10 + i * 5), (i % 2 === 0 ? 1 : -1) * (20 + i * 3)],
-                opacity: [0, 0.8, 0],
-                scale: [0.3, 1, 0.2],
+                y: [0, -40 - Math.random() * 50, -80 - Math.random() * 40],
+                x: [0, (i % 2 === 0 ? 1 : -1) * (5 + Math.random() * 15)],
+                opacity: [0, 0.9, 0],
+                scale: [0.4, 1.2 + Math.random() * 0.5, 0.1],
+                rotate: [0, (i % 2 === 0 ? 1 : -1) * 20],
               }}
               transition={{
-                duration: 1.5 + i * 0.2,
+                duration: 1 + Math.random() * 0.8,
                 repeat: Infinity,
-                delay: i * 0.3,
+                delay: i * 0.15,
                 ease: "easeOut",
               }}
             >
-              <Flame className="w-5 h-5 text-primary" style={{ filter: "blur(1px)" }} />
+              <Flame
+                className="text-primary"
+                style={{
+                  width: `${14 + Math.random() * 10}px`,
+                  height: `${14 + Math.random() * 10}px`,
+                  filter: "blur(0.5px)",
+                }}
+              />
             </motion.div>
+          ))}
+
+          {/* Inner embers - tiny sparks */}
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={`ember-${i}`}
+              className="absolute rounded-full bg-orange-400"
+              style={{
+                width: `${2 + Math.random() * 3}px`,
+                height: `${2 + Math.random() * 3}px`,
+                left: `${25 + Math.random() * 50}%`,
+                bottom: "20%",
+              }}
+              animate={{
+                y: [0, -60 - Math.random() * 80],
+                x: [(i % 2 === 0 ? 1 : -1) * Math.random() * 30],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: 0.8 + Math.random() * 1,
+                repeat: Infinity,
+                delay: i * 0.2 + Math.random() * 0.5,
+                ease: "easeOut",
+              }}
+            />
           ))}
 
           <motion.img
@@ -50,7 +101,7 @@ const HeroSection = () => {
           />
         </motion.div>
 
-        {/* Tagline - centered */}
+        {/* Tagline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,21 +123,6 @@ const HeroSection = () => {
         >
           העסק שלך על טייס אוטומטי. חשיפה חכמה, שירות 24/7, ונכסים דיגיטליים שבאמת מוכרים.
         </motion.p>
-
-        <motion.a
-          href="https://wa.me/972587619264"
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-          className="inline-flex items-center gap-3 copper-gradient-bg copper-glow text-primary-foreground font-bold text-base px-8 py-3.5 min-h-[48px] rounded-full transition-shadow duration-300 hover:shadow-[0_0_50px_hsla(18,100%,50%,0.4)]"
-        >
-          <MessageCircle className="w-6 h-6" />
-          בואו נדבר
-        </motion.a>
       </div>
     </section>
   );

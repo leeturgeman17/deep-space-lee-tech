@@ -12,6 +12,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AccessibilityWidget from "@/components/AccessibilityWidget";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import FloatingCTA from "@/components/FloatingCTA";
 import SiteLoader from "@/components/SiteLoader";
 
 const Index = () => {
@@ -33,6 +34,7 @@ const Index = () => {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <FloatingCTA />
       <AccessibilityWidget />
     </div>
   );

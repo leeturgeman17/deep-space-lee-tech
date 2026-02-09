@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -53,42 +55,71 @@ const faqs = [
 ];
 
 const FAQSection = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section id="faq" className="relative py-16 px-4">
       <div className="container max-w-3xl">
-        <motion.h2
+        {/* Clickable header to toggle all FAQs */}
+        <motion.button
+          onClick={() => setIsOpen(!isOpen)}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-4xl font-black mb-8 md:mb-12 text-center"
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          className="w-full flex items-center justify-center gap-3 mb-4 cursor-pointer group"
         >
-          <span className="copper-gradient-text">שאלות נפוצות</span>
-        </motion.h2>
+          <h2 className="text-2xl md:text-4xl font-black">
+            <span className="copper-gradient-text">שאלות נפוצות</span>
+          </h2>
+          <motion.div
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.4, type: "spring", stiffness: 200 }}
+          >
+            <ChevronDown className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+          </motion.div>
+        </motion.button>
 
-        <div className="space-y-3">
-          {faqs.map((faq, i) => (
+        <p className="text-center text-muted-foreground text-sm mb-6">
+          לחצו לפתיחת השאלות
+        </p>
+
+        <AnimatePresence>
+          {isOpen && (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="glass-card p-0"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+              className="overflow-hidden"
             >
-              <Accordion type="single" collapsible>
-                <AccordionItem value={`faq-${i}`} className="border-none">
-                  <AccordionTrigger className="text-sm md:text-lg font-bold text-foreground hover:text-primary hover:no-underline text-right py-4 px-4 md:px-6">
-                    {faq.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-sm md:text-base leading-relaxed px-4 md:px-6 pb-4 md:pb-5">
-                    {faq.a}
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+              <div className="space-y-3">
+                {faqs.map((faq, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.4, delay: i * 0.06 }}
+                    className="glass-card p-0"
+                  >
+                    <Accordion type="single" collapsible>
+                      <AccordionItem value={`faq-${i}`} className="border-none">
+                        <AccordionTrigger className="text-sm md:text-lg font-bold text-foreground hover:text-primary hover:no-underline text-right py-4 px-4 md:px-6">
+                          {faq.q}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground text-sm md:text-base leading-relaxed px-4 md:px-6 pb-4 md:pb-5">
+                          {faq.a}
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
-          ))}
-        </div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
