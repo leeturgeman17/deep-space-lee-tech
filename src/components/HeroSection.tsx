@@ -1,6 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@/assets/leetech-logo-new.png";
+import heroVideo from "@/assets/video-project.mp4";
 
 const HeroSection = () => {
   return (
@@ -65,6 +66,25 @@ const HeroSection = () => {
           <MessageCircle className="w-6 h-6" />
           בואו נדבר
         </motion.a>
+
+        {/* Video */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.5 }}
+          className="mt-14 max-w-2xl mx-auto"
+        >
+          <div className="relative rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_40px_hsla(18,100%,50%,0.2)]">
+            <video
+              src={heroVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full aspect-video object-cover"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
