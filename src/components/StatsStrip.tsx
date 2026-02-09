@@ -1,11 +1,42 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { Users, Shield, Clock } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: "20,000+", label: "חשיפה קהילתית" },
-  { icon: Shield, value: "100%", label: "שקיפות מלאה" },
-  { icon: Clock, value: "24/7", label: "זמינות מערכת" },
+  { icon: Users, value: 20000, suffix: "+", label: "חשיפה קהילתית" },
+  { icon: Shield, value: 100, suffix: "%", label: "שקיפות מלאה" },
+  { icon: Clock, value: 24, suffix: "/7", label: "זמינות מערכת" },
 ];
+
+const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const duration = 2000;
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, duration / steps);
+    return () => clearInterval(timer);
+  }, [isInView, target]);
+
+  return (
+    <span ref={ref}>
+      {count.toLocaleString()}{suffix}
+    </span>
+  );
+};
 
 const StatsStrip = () => {
   return (
@@ -30,7 +61,7 @@ const StatsStrip = () => {
               >
                 <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
                 <div className="text-4xl md:text-5xl font-black copper-gradient-text mb-2">
-                  {stat.value}
+                  <CountUp target={stat.value} suffix={stat.suffix} />
                 </div>
                 <p className="text-muted-foreground text-sm font-medium">{stat.label}</p>
               </motion.div>
