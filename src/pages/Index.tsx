@@ -2,10 +2,10 @@ import Starfield from "@/components/Starfield";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
-
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
 
 const Index = () => {
   return (
@@ -15,11 +15,11 @@ const Index = () => {
       <main>
         <HeroSection />
         <ServicesSection />
-        
         <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />
+      <AccessibilityWidget />
     </div>
   );
 };
