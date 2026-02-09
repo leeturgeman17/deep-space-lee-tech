@@ -104,7 +104,7 @@ const Header = () => {
                   <button
                     key={item.href}
                     onClick={() => handleClick(item.href)}
-                    className="block w-full text-right text-base font-medium text-foreground/80 hover:text-primary py-2 transition-colors"
+                    className="block w-full text-right text-base font-medium text-foreground/80 hover:text-primary min-h-[44px] py-2.5 transition-colors"
                   >
                     {item.label}
                   </button>

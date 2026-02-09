@@ -5,8 +5,8 @@ import heroVideo from "@/assets/video-project.mp4";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4">
-      <div className="text-center max-w-4xl mx-auto">
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-12 px-4">
+      <div className="text-center max-w-lg mx-auto">
         {/* Animated Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5, rotateY: -180 }}
@@ -61,7 +61,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
-          className="inline-flex items-center gap-3 copper-gradient-bg copper-glow text-primary-foreground font-bold text-base md:text-lg px-8 md:px-10 py-3 md:py-4 rounded-full transition-shadow duration-300 hover:shadow-[0_0_50px_hsla(18,100%,50%,0.4)]"
+          className="inline-flex items-center gap-3 copper-gradient-bg copper-glow text-primary-foreground font-bold text-base px-8 py-3.5 min-h-[48px] rounded-full transition-shadow duration-300 hover:shadow-[0_0_50px_hsla(18,100%,50%,0.4)]"
         >
           <MessageCircle className="w-6 h-6" />
           בואו נדבר
