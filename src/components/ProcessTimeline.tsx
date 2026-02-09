@@ -28,15 +28,19 @@ const ProcessTimeline = () => {
           {steps.map((step, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.2 }}
+              transition={{ type: "spring", damping: 15, stiffness: 200, delay: i * 0.25 }}
               className="relative flex flex-col items-center text-center flex-1"
             >
-              <div className="w-24 h-24 rounded-full copper-gradient-bg copper-glow flex items-center justify-center mb-5 relative z-10">
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="w-24 h-24 rounded-full copper-gradient-bg copper-glow flex items-center justify-center mb-5 relative z-10"
+              >
                 <step.icon className="w-10 h-10 text-primary-foreground" />
-              </div>
+              </motion.div>
               <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
               <p className="text-muted-foreground text-sm max-w-[200px]">{step.desc}</p>
             </motion.div>

@@ -43,10 +43,10 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="relative py-24 px-4">
       <div className="container max-w-3xl text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ type: "spring", damping: 15, stiffness: 200 }}
           className="text-3xl md:text-4xl font-bold mb-16"
         >
           <span className="copper-gradient-text">לקוחות מספרים</span>
