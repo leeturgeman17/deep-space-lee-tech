@@ -19,7 +19,7 @@ const WhyLeeTech = () => {
           transition={{ duration: 0.6 }}
           className="text-2xl sm:text-3xl font-black text-center mb-8"
         >
-          למה <span className="copper-gradient-text">LeeTech</span>?
+          <span className="text-lg sm:text-xl">למה</span> <span className="copper-gradient-text text-3xl sm:text-5xl">LeeTech</span><span className="text-lg sm:text-xl">?</span>
         </motion.h2>
 
         <div className="grid grid-cols-2 gap-3">
