@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="relative py-24 px-4">
+    <section id="testimonials" className="relative py-24 px-4">
       <div className="container max-w-3xl text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ const TestimonialsSection = () => {
             >
               <div className="flex justify-center gap-1 mb-5">
                 {Array.from({ length: testimonials[active].stars }).map((_, s) => (
-                  <Star key={s} className="w-5 h-5 fill-copper text-copper" />
+                  <Star key={s} className="w-5 h-5 fill-primary text-primary" />
                 ))}
               </div>
               <p className="text-foreground text-lg leading-relaxed mb-6">

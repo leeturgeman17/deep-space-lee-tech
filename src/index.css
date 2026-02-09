@@ -6,23 +6,23 @@
 
 @layer base {
   :root {
-    --background: 30 30% 92%;
-    --foreground: 20 15% 15%;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 90%;
 
-    --card: 30 25% 88%;
-    --card-foreground: 20 15% 15%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 90%;
 
-    --popover: 30 25% 88%;
-    --popover-foreground: 20 15% 15%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 90%;
 
     --primary: 18 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 20% 85%;
-    --secondary-foreground: 20 15% 15%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 30 15% 82%;
-    --muted-foreground: 20 10% 40%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
 
     --accent: 18 100% 50%;
     --accent-foreground: 0 0% 100%;
@@ -30,25 +30,25 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 20% 78%;
-    --input: 30 15% 80%;
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
     --ring: 18 100% 50%;
 
     --radius: 0.75rem;
 
     --copper-start: 18 100% 50%;
     --copper-end: 24 100% 53%;
-    --silver: 20 10% 25%;
-    --glass-bg: 30 20% 88%;
-    --glass-border: 30 20% 78%;
+    --silver: 0 0% 88%;
+    --glass-bg: 0 0% 8%;
+    --glass-border: 0 0% 18%;
 
-    --sidebar-background: 30 25% 90%;
-    --sidebar-foreground: 20 15% 15%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 88%;
     --sidebar-primary: 18 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 30 20% 85%;
-    --sidebar-accent-foreground: 20 15% 15%;
-    --sidebar-border: 30 20% 78%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 88%;
+    --sidebar-border: 0 0% 15%;
     --sidebar-ring: 18 100% 50%;
   }
 }
@@ -71,10 +71,14 @@
 @layer components {
   .glass-card {
     @apply relative overflow-hidden rounded-2xl;
-    background: hsla(var(--glass-bg), 0.6);
+    background: hsla(0, 0%, 8%, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsla(var(--glass-border), 0.4);
+    border: 1px solid hsla(0, 0%, 20%, 0.4);
+  }
+
+  .glass-card:hover {
+    border-color: hsla(18, 100%, 50%, 0.5);
   }
 
   .copper-gradient-text {
@@ -99,7 +103,7 @@
   .star {
     position: absolute;
     border-radius: 50%;
-    background: hsla(30, 30%, 60%, 0.5);
+    background: white;
     animation: twinkle var(--duration) ease-in-out infinite;
     opacity: 0;
   }
@@ -117,6 +121,11 @@
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes countUp {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
   }
 
   .animate-float {
