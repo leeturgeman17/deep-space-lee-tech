@@ -1,78 +1,41 @@
-import { Target, Infinity, Brain, ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
+import { Target, Infinity, Brain, ChevronDown, TrendingUp, Zap, Bot, BarChart3, Globe, Megaphone } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import ParallaxBg from "./ParallaxBg";
 
 const services = [
   {
     icon: Target,
-    title: "שיווק דיגיטלי 360°",
-    subtitle: "שליטה מלאה בכל הזירות (Meta, Google & More)",
-    description:
-      "אנחנו לא רק מעלים מודעה, אנחנו בונים לכם נוכחות דומיננטית בכל מקום שהלקוח שלכם נמצא בו.",
+    title: "שליטה בזירה",
+    subtitle: "Marketing 360°",
     bullets: [
-      {
-        label: "רשתות חברתיות (Social & Meta)",
-        text: "ניהול קמפיינים חכמים בפייסבוק, אינסטגרם, טיקטוק ולינקדאין. אנחנו דואגים לקריאייטיב שעוצר את הגלילה ולטרגט (Targeting) מדויק שמביא לידים, לא רק לייקים.",
-      },
-      {
-        label: "PPC וחיפוש",
-        text: "כשלקוח מחפש את השירות שלכם בגוגל – אתם תהיו שם ראשונים.",
-      },
-      {
-        label: "חשיפה רחבה (Display & Native)",
-        text: "פרסום באתרי תוכן גדולים (כמו טבולה/אאוטבריין) כדי לצרוב את המותג שלכם בתודעה של הלקוחות.",
-      },
+      { icon: Megaphone, text: "קמפיינים חכמים ברשתות" },
+      { icon: TrendingUp, text: "PPC שמביא לידים, לא לייקים" },
+      { icon: Globe, text: "חשיפה רחבה ב-Display & Native" },
     ],
-    tags: ["Meta", "Google", "TikTok", "LinkedIn", "Native Ads"],
+    tags: ["Meta", "Google", "TikTok"],
   },
   {
     icon: Infinity,
-    title: "אוטומציות עסקיות",
-    subtitle: "העסק עובד 24/7 על טייס אוטומטי",
-    description:
-      "תשתית טכנולוגית שמחברת בין כל המערכות שלכם וחוסכת לכם עשרות שעות עבודה בחודש.",
+    title: "עסק על טייס אוטומטי",
+    subtitle: "Business Automation",
     bullets: [
-      {
-        label: "סנכרון מלא",
-        text: "הוואטסאפ מדבר עם ה-CRM, הליד מהאתר נכנס ישר ליומן הפגישות, והחשבונית יוצאת לבד.",
-      },
-      {
-        label: "אפס טעויות",
-        text: "המערכת לא שוכחת לחזור ללקוח, לא מתבלבלת בנתונים ולא יוצאת להפסקת צהריים.",
-      },
-      {
-        label: "שירות לקוחות מיידי",
-        text: "מענה אוטומטי חכם ללקוחות בכל שעה ביום, שמחמם את הליד לפני שאתם בכלל מדברים איתו.",
-      },
+      { icon: Zap, text: "פועל 24/7 בלי התערבות" },
+      { icon: BarChart3, text: "סנכרון CRM מלא" },
+      { icon: Target, text: "אפס טעויות אנושיות" },
     ],
-    tags: ["CRM Sync", "Zero Errors", "Instant Reply", "WhatsApp"],
+    tags: ["CRM Sync", "WhatsApp", "Zero Errors"],
   },
   {
     icon: Brain,
-    title: "פתרונות AI ופיתוח",
-    subtitle: "כל פתרונות הבינה המלאכותית תחת קורת גג אחת",
-    description:
-      "העולם הטכנולוגי רץ קדימה – אנחנו מוודאים שאתם מובילים את המירוץ. פתרונות AI מכל הסוגים, מותאמים אישית לצרכים שלכם.",
+    title: "טכנולוגיית העתיד",
+    subtitle: "AI & Development",
     bullets: [
-      {
-        label: "נציגים וירטואליים (Agents)",
-        text: "צ'אט-בוטים וסוכנים חכמים שיודעים לנהל שיחות מכירה שלמות, לתת שירות ולתפעל תהליכים מורכבים.",
-      },
-      {
-        label: "יצירת תוכן (Generative AI)",
-        text: "מערכות ליצירת טקסטים, תמונות ווידאו שיווקי באופן אוטומטי לחיסכון אדיר בעלויות שיווק.",
-      },
-      {
-        label: "ניתוח דאטה",
-        text: "אלגוריתמים שיודעים לקחת את המידע העסקי שלכם ולהפיק ממנו תובנות לצמיחה.",
-      },
-      {
-        label: "בניית נכסים",
-        text: "אתרים מהירים ודפי נחיתה חכמים שנבנים בטכנולוגיות העתיד.",
-      },
+      { icon: Bot, text: "נציגים וירטואליים חכמים" },
+      { icon: Zap, text: "יצירת נכסים דיגיטליים" },
+      { icon: TrendingUp, text: "המרות גבוהות מוכחות" },
     ],
-    tags: ["Virtual Agents", "Generative AI", "Data Analysis", "Custom Dev"],
+    tags: ["Virtual Agents", "AI", "High Conversion"],
   },
 ];
 
@@ -87,83 +50,70 @@ const ServiceCard = ({
 
   return (
     <motion.div
-      custom={index}
-      initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60, scale: 0.95 }}
-      whileInView={{ opacity: 1, x: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ type: "spring", damping: 20, stiffness: 150, delay: index * 0.15 }}
-      className="glass-card overflow-hidden"
+      transition={{ duration: 0.5, delay: index * 0.12 }}
+      className="glass-card"
     >
-      {/* Card Header */}
-      <div
-        className="p-5 md:p-10 cursor-pointer"
+      <button
+        className="w-full p-5 flex items-center gap-4 text-right min-h-[56px]"
         onClick={() => setExpanded(!expanded)}
+        aria-expanded={expanded}
       >
-        <div className="flex items-start gap-5">
-          <div className="shrink-0 inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl copper-gradient-bg">
-            <service.icon className="w-6 h-6 md:w-8 md:h-8 text-primary-foreground" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <h3 className="text-lg md:text-3xl font-bold copper-gradient-text mb-1">
-              {service.title}
-            </h3>
-            <p className="text-sm md:text-lg text-foreground/70 font-medium">
-              {service.subtitle}
-            </p>
-          </div>
+        <div className="shrink-0 w-12 h-12 rounded-xl copper-gradient-bg flex items-center justify-center">
+          <service.icon className="w-6 h-6 text-primary-foreground" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-lg font-bold copper-gradient-text leading-tight">
+            {service.title}
+          </h3>
+          <p className="text-xs text-muted-foreground mt-0.5">{service.subtitle}</p>
+        </div>
+        <motion.div
+          animate={{ rotate: expanded ? 180 : 0 }}
+          transition={{ duration: 0.25 }}
+          className="shrink-0"
+        >
+          <ChevronDown className="w-5 h-5 text-primary" />
+        </motion.div>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {expanded && (
           <motion.div
-            animate={{ rotate: expanded ? 180 : 0 }}
-            transition={{ duration: 0.3 }}
-            className="shrink-0 mt-2"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
           >
-            <ChevronDown className="w-6 h-6 text-primary" />
+            <div className="px-5 pb-5 pt-1 border-t border-border/20">
+              <ul className="space-y-3 mt-3">
+                {service.bullets.map((b, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <div className="shrink-0 w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <b.icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-sm text-foreground/80">{b.text}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-2 mt-4">
+                {service.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs font-medium px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </motion.div>
-        </div>
-      </div>
-
-      {/* Expandable Content */}
-      <motion.div
-        initial={false}
-        animate={{
-          height: expanded ? "auto" : 0,
-          opacity: expanded ? 1 : 0,
-        }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
-        className="overflow-hidden"
-      >
-        <div className="px-5 md:px-10 pb-6 md:pb-10 pt-0">
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 border-t border-border/30 pt-6">
-            {service.description}
-          </p>
-
-          <ul className="space-y-6">
-            {service.bullets.map((bullet, bIdx) => (
-              <li key={bIdx} className="flex gap-4">
-                <div className="shrink-0 w-2 h-2 rounded-full copper-gradient-bg mt-3" />
-                <div>
-                  <span className="font-bold text-foreground text-base md:text-lg block mb-1">
-                    {bullet.label}
-                  </span>
-                  <span className="text-muted-foreground text-base leading-relaxed">
-                    {bullet.text}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-
-          <div className="flex flex-wrap gap-2 mt-8 pt-6 border-t border-border/30">
-            {service.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-sm font-medium px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
@@ -171,25 +121,25 @@ const ServiceCard = ({
 const ServicesSection = () => {
   return (
     <ParallaxBg variant="glow">
-    <section id="services" className="relative py-24 px-4">
-      <div className="container max-w-4xl">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-black mb-10 md:mb-16 text-center"
-        >
-          <span className="copper-gradient-text">המסלולים שלנו</span>
-        </motion.h2>
+      <section id="services" className="relative py-16 px-4">
+        <div className="container max-w-lg mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl sm:text-3xl font-black mb-8 text-center"
+          >
+            <span className="copper-gradient-text">המסלולים שלנו</span>
+          </motion.h2>
 
-        <div className="space-y-6">
-          {services.map((service, index) => (
-            <ServiceCard key={index} service={service} index={index} />
-          ))}
+          <div className="space-y-4">
+            {services.map((service, index) => (
+              <ServiceCard key={index} service={service} index={index} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </ParallaxBg>
   );
 };
