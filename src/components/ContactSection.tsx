@@ -32,7 +32,7 @@ const ContactSection = () => {
     const text = encodeURIComponent(
       `שם: ${trimmedName}\nטלפון: ${trimmedPhone}\nהודעה: ${trimmedMessage}`
     );
-    window.open(`https://wa.me/972000000000?text=${text}`, "_blank");
+    window.open(`https://wa.me/972587619264?text=${text}`, "_blank");
 
     setTimeout(() => {
       setSending(false);
