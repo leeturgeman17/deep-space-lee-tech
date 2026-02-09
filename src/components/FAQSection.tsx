@@ -16,8 +16,23 @@ const faqs = [
     a: "צ'אטבוט קלאסי עובד לפי תסריט קבוע. נציג וירטואלי מבוסס AI יודע להבין הקשר, לענות על שאלות מורכבות, לנהל שיחת מכירה שלמה ואפילו לבצע פעולות במערכות שלכם – הכל באופן אוטונומי.",
   },
   {
-    q: "כמה זמן לוקח להקים מערכת אוטומציה?",
-    a: "תלוי במורכבות. אוטומציה בסיסית (סנכרון CRM + מענה אוטומטי בוואטסאפ) יכולה לעלות לאוויר תוך 3-5 ימי עבודה. מערכת מורכבת עם מספר אינטגרציות לוקחת בין 2-4 שבועות.",
+    q: "כמה זמן לוקח להקים מערכת?",
+    a: (
+      <span>
+        תלוי במורכבות הפרויקט ובכמות האינטגרציות. כדי שנוכל לתת לכם הערכת זמנים מדויקת,{" "}
+        <a
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault();
+            document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="text-primary underline hover:text-primary/80 font-bold"
+        >
+          מלאו את טופס יצירת הקשר
+        </a>{" "}
+        עם פרטי העסק ומה שאתם צריכים – ואנחנו נחזור אליכם עם תוכנית עבודה והערכת זמנים.
+      </span>
+    ),
   },
   {
     q: "האם השירות מתאים לעסקים קטנים?",
@@ -31,18 +46,22 @@ const faqs = [
     q: "איך עובד תהליך ניתוח הדאטה?",
     a: "אנחנו מחברים את כל מקורות המידע שלכם (גוגל אנליטיקס, CRM, פלטפורמות פרסום) לדאשבורד מרכזי. אלגוריתמים חכמים מזהים דפוסים, מנבאים מגמות ומספקים המלצות פעולה לצמיחה.",
   },
+  {
+    q: "מה בדיוק אתם עושים ב-LeeTech?",
+    a: "אנחנו מתמחים בשלושה תחומים: שיווק דיגיטלי – ניהול קמפיינים, SEO ויצירת לידים בכל הפלטפורמות. אוטומציה עסקית – חיבור מערכות, תהליכים אוטומטיים ומענה 24/7 שחוסך זמן וכסף. פיתוח ובינה מלאכותית – בניית אתרים, אפליקציות ונציגים וירטואליים חכמים שמוכרים בשבילכם.",
+  },
 ];
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="relative py-24 px-4">
+    <section id="faq" className="relative py-16 px-4">
       <div className="container max-w-3xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-black mb-10 md:mb-16 text-center"
+          className="text-2xl md:text-4xl font-black mb-8 md:mb-12 text-center"
         >
           <span className="copper-gradient-text">שאלות נפוצות</span>
         </motion.h2>

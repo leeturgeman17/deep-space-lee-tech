@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ParallaxBg from "./ParallaxBg";
 
@@ -42,58 +42,77 @@ const TestimonialsSection = () => {
 
   return (
     <ParallaxBg variant="orbs">
-    <section id="testimonials" className="relative py-24 px-4">
-      <div className="container max-w-3xl text-center">
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ type: "spring", damping: 15, stiffness: 200 }}
-          className="text-3xl md:text-4xl font-bold mb-16"
-        >
-          <span className="copper-gradient-text">לקוחות מספרים</span>
-        </motion.h2>
+      <section id="testimonials" className="relative py-16 px-4">
+        <div className="container max-w-3xl text-center">
+          <motion.h2
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", damping: 15, stiffness: 200 }}
+            className="text-2xl md:text-4xl font-bold mb-10"
+          >
+            <span className="copper-gradient-text">לקוחות מספרים</span>
+          </motion.h2>
 
-        <div className="relative min-h-[220px]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, y: 20, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.96 }}
-              transition={{ duration: 0.5 }}
-              className="glass-card p-8 md:p-10"
-            >
-              <div className="flex justify-center gap-1 mb-5">
-                {Array.from({ length: testimonials[active].stars }).map((_, s) => (
-                  <Star key={s} className="w-5 h-5 fill-primary text-primary" />
-                ))}
-              </div>
-              <p className="text-foreground text-lg leading-relaxed mb-6">
-                &ldquo;{testimonials[active].text}&rdquo;
-              </p>
-              <p className="copper-gradient-text font-bold text-base">{testimonials[active].name}</p>
-              <p className="text-muted-foreground text-sm">{testimonials[active].role}</p>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+          <div className="relative min-h-[240px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, rotateY: 90 }}
+                animate={{ opacity: 1, rotateY: 0 }}
+                exit={{ opacity: 0, rotateY: -90 }}
+                transition={{ duration: 0.6, type: "spring", damping: 20 }}
+                className="glass-card p-6 md:p-8 relative"
+              >
+                {/* Quote icon */}
+                <Quote className="w-8 h-8 text-primary/20 absolute top-4 right-4" />
 
-        <div className="flex justify-center gap-2 mt-8">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                i === active
-                  ? "copper-gradient-bg w-8"
-                  : "bg-muted hover:bg-muted-foreground/30"
-              }`}
-              aria-label={`ביקורת ${i + 1}`}
-            />
-          ))}
+                <div className="flex justify-center gap-1 mb-4">
+                  {Array.from({ length: testimonials[active].stars }).map((_, s) => (
+                    <motion.div
+                      key={s}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: s * 0.1 }}
+                    >
+                      <Star className="w-4 h-4 fill-primary text-primary" />
+                    </motion.div>
+                  ))}
+                </div>
+
+                <p className="text-foreground text-base md:text-lg leading-relaxed mb-5">
+                  &ldquo;{testimonials[active].text}&rdquo;
+                </p>
+
+                <div className="flex items-center justify-center gap-3">
+                  <div className="w-10 h-10 rounded-full copper-gradient-bg flex items-center justify-center text-primary-foreground font-bold text-sm">
+                    {testimonials[active].name.charAt(0)}
+                  </div>
+                  <div className="text-right">
+                    <p className="copper-gradient-text font-bold text-sm">{testimonials[active].name}</p>
+                    <p className="text-muted-foreground text-xs">{testimonials[active].role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  i === active
+                    ? "copper-gradient-bg w-8"
+                    : "bg-muted hover:bg-muted-foreground/30"
+                }`}
+                aria-label={`ביקורת ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </ParallaxBg>
   );
 };

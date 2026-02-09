@@ -10,20 +10,27 @@ const services = [
 
 const ExpressServices = () => {
   return (
-    <section className="py-14 relative">
+    <section className="py-10 relative">
       {/* Visually separated background */}
       <div className="absolute inset-0 bg-secondary/50" />
       <div className="container mx-auto px-4 relative z-10 max-w-lg">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.4, type: "spring", stiffness: 300, damping: 15 }}
           className="text-xl sm:text-2xl font-bold text-center mb-1"
         >
-          <span className="copper-gradient-text">שירותי Express</span>
+          <motion.span
+            className="copper-gradient-text inline-block"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            ⚡ שירותי Express
+          </motion.span>
         </motion.h2>
-        <p className="text-center text-muted-foreground text-xs mb-8">
-          מהיר · חד · בלי התחייבות
+        <p className="text-center text-muted-foreground text-xs mb-6">
+          עבודות קטנות ותוספים שמשדרגים את העסק – מהיר, חד, בלי התחייבות
         </p>
 
         {/* Horizontal scroll strip on mobile, grid on larger */}
