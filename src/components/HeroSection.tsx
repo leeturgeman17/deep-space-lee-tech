@@ -16,11 +16,11 @@ const HeroSection = () => {
           <motion.img
             src={logo}
             alt="LeeTech"
-            className="h-32 md:h-44 w-auto mx-auto drop-shadow-[0_0_40px_hsla(18,100%,50%,0.4)]"
+            className="h-36 md:h-48 w-auto mx-auto drop-shadow-[0_0_40px_hsla(18,100%,50%,0.4)]"
             animate={{
               filter: [
                 "drop-shadow(0 0 20px hsla(18,100%,50%,0.3))",
-                "drop-shadow(0 0 40px hsla(18,100%,50%,0.6))",
+                "drop-shadow(0 0 50px hsla(18,100%,50%,0.7))",
                 "drop-shadow(0 0 20px hsla(18,100%,50%,0.3))",
               ],
             }}

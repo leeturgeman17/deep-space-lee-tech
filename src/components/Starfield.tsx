@@ -2,26 +2,26 @@ import { useMemo } from "react";
 
 const Starfield = () => {
   const stars = useMemo(() => {
-    return Array.from({ length: 150 }, (_, i) => ({
+    return Array.from({ length: 200 }, (_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
       size: Math.random() * 2.5 + 0.5,
       duration: `${Math.random() * 4 + 3}s`,
-      maxOpacity: Math.random() * 0.6 + 0.2,
+      maxOpacity: Math.random() * 0.7 + 0.3,
       delay: `${Math.random() * 5}s`,
     }));
   }, []);
 
   const nebulas = useMemo(() => [
-    { left: "10%", top: "20%", size: 400, color: "hsla(18, 100%, 50%, 0.06)", delay: "0s" },
-    { left: "70%", top: "60%", size: 350, color: "hsla(30, 60%, 50%, 0.05)", delay: "2s" },
-    { left: "50%", top: "80%", size: 500, color: "hsla(20, 80%, 40%, 0.04)", delay: "4s" },
+    { left: "10%", top: "20%", size: 500, color: "hsla(18, 100%, 50%, 0.04)", delay: "0s" },
+    { left: "75%", top: "50%", size: 400, color: "hsla(240, 60%, 50%, 0.03)", delay: "2s" },
+    { left: "40%", top: "75%", size: 600, color: "hsla(280, 50%, 40%, 0.03)", delay: "4s" },
+    { left: "85%", top: "10%", size: 300, color: "hsla(18, 80%, 50%, 0.03)", delay: "1s" },
   ], []);
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      {/* Nebula clouds */}
       {nebulas.map((n, i) => (
         <div
           key={`nebula-${i}`}
@@ -33,12 +33,11 @@ const Starfield = () => {
             height: n.size,
             background: `radial-gradient(circle, ${n.color}, transparent 70%)`,
             animationDelay: n.delay,
-            filter: "blur(60px)",
+            filter: "blur(80px)",
           }}
         />
       ))}
 
-      {/* Stars */}
       {stars.map((star) => (
         <div
           key={star.id}
