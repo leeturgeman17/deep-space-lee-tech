@@ -6,50 +6,50 @@
 
 @layer base {
   :root {
-    --background: 0 0% 3%;
-    --foreground: 0 0% 90%;
+    --background: 0 0% 100%;
+    --foreground: 0 80% 45%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 90%;
+    --card: 0 0% 97%;
+    --card-foreground: 0 80% 45%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 90%;
+    --popover: 0 0% 97%;
+    --popover-foreground: 0 80% 45%;
 
-    --primary: 50 100% 50%;
+    --primary: 0 80% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 0 0% 93%;
+    --secondary-foreground: 0 80% 45%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 50 100% 50%;
+    --accent: 0 80% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 12%;
-    --ring: 50 100% 50%;
+    --border: 0 0% 85%;
+    --input: 0 0% 88%;
+    --ring: 0 80% 50%;
 
     --radius: 0.75rem;
 
-    --copper-start: 50 100% 50%;
-    --copper-end: 55 100% 53%;
-    --silver: 0 0% 88%;
-    --glass-bg: 0 0% 8%;
-    --glass-border: 0 0% 18%;
+    --copper-start: 0 80% 50%;
+    --copper-end: 5 80% 53%;
+    --silver: 0 0% 30%;
+    --glass-bg: 0 0% 95%;
+    --glass-border: 0 0% 82%;
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 88%;
-    --sidebar-primary: 50 100% 50%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 80% 45%;
+    --sidebar-primary: 0 80% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 88%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 50 100% 50%;
+    --sidebar-accent: 0 0% 93%;
+    --sidebar-accent-foreground: 0 80% 45%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 0 80% 50%;
   }
 }
 
@@ -71,14 +71,14 @@
 @layer components {
   .glass-card {
     @apply relative overflow-hidden rounded-2xl;
-    background: hsla(0, 0%, 8%, 0.6);
+    background: hsla(0, 0%, 95%, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid hsla(0, 0%, 20%, 0.4);
+    border: 1px solid hsla(0, 0%, 80%, 0.4);
   }
 
   .glass-card:hover {
-    border-color: hsla(50, 100%, 50%, 0.5);
+    border-color: hsla(0, 80%, 50%, 0.5);
   }
 
   .copper-gradient-text {

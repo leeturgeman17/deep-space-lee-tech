@@ -18,9 +18,9 @@ const HeroSection = () => {
             className="absolute inset-0 z-0"
             animate={{
               background: [
-                "radial-gradient(ellipse at center bottom, hsla(50,100%,50%,0.3) 0%, transparent 60%)",
-                "radial-gradient(ellipse at center bottom, hsla(55,100%,55%,0.5) 0%, transparent 70%)",
-                "radial-gradient(ellipse at center bottom, hsla(50,100%,50%,0.3) 0%, transparent 60%)",
+                "radial-gradient(ellipse at center bottom, hsla(0,80%,50%,0.3) 0%, transparent 60%)",
+                "radial-gradient(ellipse at center bottom, hsla(5,80%,55%,0.5) 0%, transparent 70%)",
+                "radial-gradient(ellipse at center bottom, hsla(0,80%,50%,0.3) 0%, transparent 60%)",
               ],
             }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -65,7 +65,7 @@ const HeroSection = () => {
           {[...Array(8)].map((_, i) => (
             <motion.div
               key={`ember-${i}`}
-              className="absolute rounded-full bg-yellow-400"
+              className="absolute rounded-full bg-red-400"
               style={{
                 width: `${2 + Math.random() * 3}px`,
                 height: `${2 + Math.random() * 3}px`,
@@ -92,9 +92,9 @@ const HeroSection = () => {
             className="h-24 sm:h-32 md:h-40 w-auto mx-auto relative z-10"
             animate={{
               filter: [
-                "drop-shadow(0 0 15px hsla(50,100%,50%,0.4)) drop-shadow(0 5px 30px hsla(50,100%,50%,0.2))",
-                "drop-shadow(0 0 40px hsla(50,100%,50%,0.8)) drop-shadow(0 5px 60px hsla(50,100%,50%,0.5))",
-                "drop-shadow(0 0 15px hsla(50,100%,50%,0.4)) drop-shadow(0 5px 30px hsla(50,100%,50%,0.2))",
+                "drop-shadow(0 0 15px hsla(0,80%,50%,0.4)) drop-shadow(0 5px 30px hsla(0,80%,50%,0.2))",
+                "drop-shadow(0 0 40px hsla(0,80%,50%,0.8)) drop-shadow(0 5px 60px hsla(0,80%,50%,0.5))",
+                "drop-shadow(0 0 15px hsla(0,80%,50%,0.4)) drop-shadow(0 5px 30px hsla(0,80%,50%,0.2))",
               ],
             }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
