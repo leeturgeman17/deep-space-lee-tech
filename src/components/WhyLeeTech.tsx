@@ -3,7 +3,7 @@ import { Headset, Eye, Cpu, TrendingUp } from "lucide-react";
 
 const benefits = [
   { icon: Headset, title: "מענה 24/7", desc: "מערכות שעובדות מסביב לשעון." },
-  { icon: Eye, title: "שקיפות מלאה", desc: "דוחות בזמן אמת, גישה לנתונים." },
+  { icon: Eye, title: "משא ומתן באמונה", desc: "אנחנו דוגלים בנשאת ונתת באמונה." },
   { icon: Cpu, title: "טכנולוגיה מתקדמת", desc: "AI וכלים חדשניים לעסק שלך." },
   { icon: TrendingUp, title: "תוצאות מוכחות", desc: "עשרות עסקים שכבר שדרגו." },
 ];
