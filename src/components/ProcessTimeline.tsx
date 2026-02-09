@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Search, Cog, Rocket } from "lucide-react";
+import ParallaxBg from "./ParallaxBg";
 
 const steps = [
   { icon: Search, title: "גילוי", desc: "מבינים את העסק, הקהל והמטרות שלכם" },
@@ -9,6 +10,7 @@ const steps = [
 
 const ProcessTimeline = () => {
   return (
+    <ParallaxBg variant="grid">
     <section id="process" className="relative py-24 px-4">
       <div className="container max-w-4xl">
         <motion.h2
@@ -48,6 +50,7 @@ const ProcessTimeline = () => {
         </div>
       </div>
     </section>
+    </ParallaxBg>
   );
 };
 

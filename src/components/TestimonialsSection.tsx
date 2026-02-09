@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Star } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ParallaxBg from "./ParallaxBg";
 
 const testimonials = [
   {
@@ -40,6 +41,7 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
+    <ParallaxBg variant="orbs">
     <section id="testimonials" className="relative py-24 px-4">
       <div className="container max-w-3xl text-center">
         <motion.h2
@@ -92,6 +94,7 @@ const TestimonialsSection = () => {
         </div>
       </div>
     </section>
+    </ParallaxBg>
   );
 };
 
