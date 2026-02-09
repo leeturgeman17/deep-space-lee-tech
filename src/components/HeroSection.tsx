@@ -52,7 +52,7 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.a
-          href="https://wa.me/972000000000"
+          href="https://wa.me/972587619264"
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 20 }}
