@@ -2,6 +2,7 @@ import Starfield from "@/components/Starfield";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
+import ExpressServices from "@/components/ExpressServices";
 import StatsStrip from "@/components/StatsStrip";
 import ProcessTimeline from "@/components/ProcessTimeline";
 import FAQSection from "@/components/FAQSection";
@@ -18,6 +19,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <ServicesSection />
+        <ExpressServices />
         <StatsStrip />
         <ProcessTimeline />
         <FAQSection />
