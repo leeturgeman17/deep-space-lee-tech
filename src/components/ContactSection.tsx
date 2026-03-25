@@ -44,74 +44,74 @@ const ContactSection = () => {
 
   return (
     <ParallaxBg variant="rings">
-    <section id="contact" className="relative py-24 px-4">
-      <div className="container max-w-xl">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 text-center"
-        >
-          <span className="copper-gradient-text">דברו איתנו</span>
-        </motion.h2>
-
-        <motion.form
-          onSubmit={handleSubmit}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="glass-card p-5 md:p-10 space-y-4 md:space-y-5"
-        >
-          <div className="relative">
-            <User className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <Input
-              placeholder="שם מלא"
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              maxLength={100}
-              className="pr-10 bg-secondary/50 border-border/50 focus:border-copper placeholder:text-muted-foreground/60"
-            />
-          </div>
-
-          <div className="relative">
-            <Phone className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <Input
-              placeholder="טלפון"
-              type="tel"
-              value={form.phone}
-              onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              maxLength={15}
-              className="pr-10 bg-secondary/50 border-border/50 focus:border-copper placeholder:text-muted-foreground/60"
-            />
-          </div>
-
-          <div className="relative">
-            <MessageSquare className="absolute right-3 top-3 w-4 h-4 text-muted-foreground" />
-            <Textarea
-              placeholder="ספרו לנו במה נוכל לעזור..."
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              maxLength={1000}
-              rows={4}
-              className="pr-10 bg-secondary/50 border-border/50 focus:border-copper placeholder:text-muted-foreground/60 resize-none"
-            />
-          </div>
-
-          <motion.button
-            type="submit"
-            disabled={sending}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="w-full copper-gradient-bg copper-glow text-primary-foreground font-bold text-lg py-3.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
+      <section id="contact" className="relative py-24 px-4">
+        <div className="container max-w-xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 text-center"
           >
-            <Send className="w-5 h-5" />
-            {sending ? "שולח..." : "שליחה"}
-          </motion.button>
-        </motion.form>
-      </div>
-    </section>
+            <span className="copper-gradient-text-shimmer">דברו איתנו</span>
+          </motion.h2>
+
+          <motion.form
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="glass-card p-5 md:p-10 space-y-4 md:space-y-5"
+          >
+            <div className="relative group">
+              <User className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground transition-colors group-focus-within:text-primary" />
+              <Input
+                placeholder="שם מלא"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                maxLength={100}
+                className="pr-10 bg-secondary/50 border-border/50 focus:border-primary focus:shadow-[0_0_12px_hsla(18,100%,50%,0.15)] transition-shadow placeholder:text-muted-foreground/60"
+              />
+            </div>
+
+            <div className="relative group">
+              <Phone className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground transition-colors group-focus-within:text-primary" />
+              <Input
+                placeholder="טלפון"
+                type="tel"
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                maxLength={15}
+                className="pr-10 bg-secondary/50 border-border/50 focus:border-primary focus:shadow-[0_0_12px_hsla(18,100%,50%,0.15)] transition-shadow placeholder:text-muted-foreground/60"
+              />
+            </div>
+
+            <div className="relative group">
+              <MessageSquare className="absolute right-3 top-3 w-4 h-4 text-muted-foreground transition-colors group-focus-within:text-primary" />
+              <Textarea
+                placeholder="ספרו לנו במה נוכל לעזור..."
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                maxLength={1000}
+                rows={4}
+                className="pr-10 bg-secondary/50 border-border/50 focus:border-primary focus:shadow-[0_0_12px_hsla(18,100%,50%,0.15)] transition-shadow placeholder:text-muted-foreground/60 resize-none"
+              />
+            </div>
+
+            <motion.button
+              type="submit"
+              disabled={sending}
+              whileHover={{ scale: 1.03, boxShadow: "0 0 30px hsla(18, 100%, 50%, 0.4)" }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full copper-gradient-bg copper-glow text-primary-foreground font-bold text-lg py-3.5 rounded-full transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
+            >
+              <Send className="w-5 h-5" />
+              {sending ? "שולח..." : "שליחה"}
+            </motion.button>
+          </motion.form>
+        </div>
+      </section>
     </ParallaxBg>
   );
 };

@@ -55,6 +55,12 @@ export default {
           light: "hsl(var(--copper-end))",
         },
         silver: "hsl(var(--silver))",
+        slate: {
+          accent: "hsl(var(--slate-accent))",
+        },
+        warm: {
+          glow: "hsl(var(--warm-glow))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

@@ -49,7 +49,7 @@ const StatsStrip = () => {
           transition={{ duration: 0.6 }}
           className="glass-card p-8 md:p-10"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
@@ -57,10 +57,14 @@ const StatsStrip = () => {
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", damping: 12, stiffness: 150, delay: i * 0.2 }}
-                className="text-center"
+                className={`text-center relative ${
+                  i < stats.length - 1
+                    ? "md:border-l md:border-border/30"
+                    : ""
+                }`}
               >
-                <stat.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                <div className="text-3xl md:text-5xl font-black copper-gradient-text mb-2">
+                <stat.icon className="w-8 h-8 text-primary mx-auto mb-3 pulse-glow" />
+                <div className="text-3xl md:text-5xl font-black copper-gradient-text-shimmer mb-2">
                   <CountUp target={stat.value} suffix={stat.suffix} />
                 </div>
                 <p className="text-muted-foreground text-sm font-medium">{stat.label}</p>
