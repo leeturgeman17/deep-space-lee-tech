@@ -42,7 +42,7 @@ const TestimonialsSection = () => {
 
   return (
     <ParallaxBg variant="orbs">
-      <section id="testimonials" className="relative py-16 px-4">
+      <section id="testimonials" className="relative py-16 px-4 section-alt">
         <div className="container max-w-3xl text-center">
           <motion.h2
             initial={{ opacity: 0, scale: 0.8 }}
@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
             transition={{ type: "spring", damping: 15, stiffness: 200 }}
             className="text-2xl md:text-4xl font-bold mb-10"
           >
-            <span className="copper-gradient-text">לקוחות מספרים</span>
+            <span className="copper-gradient-text-shimmer">לקוחות מספרים</span>
           </motion.h2>
 
           <div className="relative min-h-[240px]">
@@ -64,7 +64,6 @@ const TestimonialsSection = () => {
                 transition={{ duration: 0.6, type: "spring", damping: 20 }}
                 className="glass-card p-6 md:p-8 relative"
               >
-                {/* Quote icon */}
                 <Quote className="w-8 h-8 text-primary/20 absolute top-4 right-4" />
 
                 <div className="flex justify-center gap-1 mb-4">
@@ -80,17 +79,23 @@ const TestimonialsSection = () => {
                   ))}
                 </div>
 
-                <p className="text-foreground text-base md:text-lg leading-relaxed mb-5">
+                <p className="text-foreground text-lg md:text-xl leading-relaxed mb-5 italic font-light">
                   &ldquo;{testimonials[active].text}&rdquo;
                 </p>
 
                 <div className="flex items-center justify-center gap-3">
-                  <div className="w-10 h-10 rounded-full copper-gradient-bg flex items-center justify-center text-primary-foreground font-bold text-sm">
-                    {testimonials[active].name.charAt(0)}
+                  {/* Avatar with gradient ring */}
+                  <div className="relative">
+                    <div className="absolute inset-0 rounded-full copper-gradient-bg p-[2px] animate-spin" style={{ animationDuration: "8s" }}>
+                      <div className="w-full h-full rounded-full bg-card" />
+                    </div>
+                    <div className="w-12 h-12 rounded-full copper-gradient-bg flex items-center justify-center text-primary-foreground font-bold text-base relative z-10">
+                      {testimonials[active].name.charAt(0)}
+                    </div>
                   </div>
                   <div className="text-right">
                     <p className="copper-gradient-text font-bold text-sm">{testimonials[active].name}</p>
-                    <p className="text-muted-foreground text-xs">{testimonials[active].role}</p>
+                    <p className="text-slate-accent text-xs">{testimonials[active].role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -102,10 +107,10 @@ const TestimonialsSection = () => {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                className={`h-2.5 rounded-full transition-all duration-300 ${
                   i === active
                     ? "copper-gradient-bg w-8"
-                    : "bg-muted hover:bg-muted-foreground/30"
+                    : "bg-muted hover:bg-muted-foreground/30 w-2.5"
                 }`}
                 aria-label={`ביקורת ${i + 1}`}
               />

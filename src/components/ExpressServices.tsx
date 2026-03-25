@@ -11,7 +11,6 @@ const services = [
 const ExpressServices = () => {
   return (
     <section className="py-10 relative">
-      {/* Visually separated background */}
       <div className="absolute inset-0 bg-secondary/50" />
       <div className="container mx-auto px-4 relative z-10 max-w-lg">
         <motion.h2
@@ -22,7 +21,7 @@ const ExpressServices = () => {
           className="text-xl sm:text-2xl font-bold text-center mb-1"
         >
           <motion.span
-            className="copper-gradient-text inline-block"
+            className="copper-gradient-text-shimmer inline-block"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -33,7 +32,6 @@ const ExpressServices = () => {
           עבודות קטנות ותוספים שמשדרגים את העסק – מהיר, חד, בלי התחייבות
         </p>
 
-        {/* Horizontal scroll strip on mobile, grid on larger */}
         <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-4 md:overflow-visible">
           {services.map((s, i) => (
             <motion.div
@@ -42,9 +40,10 @@ const ExpressServices = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="snap-center shrink-0 w-[140px] md:w-auto glass-card p-4 text-center"
+              whileHover={{ y: -6, scale: 1.03 }}
+              className="snap-center shrink-0 w-[140px] md:w-auto glass-card shimmer-border p-4 text-center group"
             >
-              <div className="w-10 h-10 rounded-xl copper-gradient-bg flex items-center justify-center mx-auto mb-2">
+              <div className="w-10 h-10 rounded-xl copper-gradient-bg flex items-center justify-center mx-auto mb-2 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                 <s.icon className="w-5 h-5 text-primary-foreground" />
               </div>
               <h3 className="font-bold text-sm mb-0.5">{s.title}</h3>

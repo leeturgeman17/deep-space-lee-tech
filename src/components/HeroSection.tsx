@@ -2,6 +2,22 @@ import { Flame } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@/assets/leetech-logo-new.png";
 
+const WordReveal = ({ words, className }: { words: string[]; className?: string }) => (
+  <span className={className}>
+    {words.map((word, i) => (
+      <motion.span
+        key={i}
+        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.5, delay: 0.8 + i * 0.15 }}
+        className="inline-block mx-1"
+      >
+        {word}
+      </motion.span>
+    ))}
+  </span>
+);
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center pt-20 pb-6 px-4">
@@ -13,7 +29,7 @@ const HeroSection = () => {
           transition={{ duration: 1, type: "spring", damping: 10, stiffness: 100 }}
           className="mb-6 relative inline-block"
         >
-          {/* Subtle fire base glow - blends with background */}
+          {/* Subtle fire base glow */}
           <motion.div
             className="absolute inset-0 z-0"
             animate={{
@@ -27,7 +43,7 @@ const HeroSection = () => {
             style={{ filter: "blur(30px)", transform: "scale(1.3)" }}
           />
 
-          {/* Outer fire ring - large flames */}
+          {/* Outer fire ring */}
           {[...Array(10)].map((_, i) => (
             <motion.div
               key={`outer-${i}`}
@@ -61,11 +77,11 @@ const HeroSection = () => {
             </motion.div>
           ))}
 
-          {/* Inner embers - tiny sparks */}
+          {/* Inner embers */}
           {[...Array(8)].map((_, i) => (
             <motion.div
               key={`ember-${i}`}
-              className="absolute rounded-full bg-orange-400"
+              className="absolute rounded-full bg-primary"
               style={{
                 width: `${2 + Math.random() * 3}px`,
                 height: `${2 + Math.random() * 3}px`,
@@ -101,24 +117,59 @@ const HeroSection = () => {
           />
         </motion.div>
 
-        {/* Tagline */}
+        {/* Tagline with word reveal */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.6 }}
           className="text-3xl sm:text-5xl md:text-6xl font-black leading-tight mb-4 flex items-center justify-center gap-3"
         >
-          <span className="copper-gradient-text">שיווק</span>
-          <span className="silver-text">·</span>
-          <span className="copper-gradient-text">מערכות</span>
-          <span className="silver-text">·</span>
-          <span className="copper-gradient-text">סדר</span>
+          <motion.span
+            className="copper-gradient-text-shimmer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
+            שיווק
+          </motion.span>
+          <motion.span
+            className="silver-text"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, delay: 0.9 }}
+          >
+            ·
+          </motion.span>
+          <motion.span
+            className="copper-gradient-text-shimmer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+          >
+            מערכות
+          </motion.span>
+          <motion.span
+            className="silver-text"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, delay: 1.2 }}
+          >
+            ·
+          </motion.span>
+          <motion.span
+            className="copper-gradient-text-shimmer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.3 }}
+          >
+            סדר
+          </motion.span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
           className="text-sm md:text-lg text-foreground font-bold mb-8 max-w-md mx-auto leading-relaxed px-2"
         >
           העסק שלך על טייס אוטומטי. חשיפה חכמה, שירות 24/7, ונכסים דיגיטליים שבאמת מוכרים.
