@@ -6,12 +6,13 @@ import ParallaxBg from "./ParallaxBg";
 const services = [
   {
     icon: Target,
-    title: "שליטה בזירה",
-    subtitle: "Marketing 360°",
+    title: "זורעים וקוצרים",
+    verse: "הזורעים בדמעה ברינה יקצורו",
+    subtitle: "קמפיינים ממוקדים שפוגעים בול",
     bullets: [
-      { icon: Megaphone, text: "פרסום באינסטגרם, פייסבוק וטיקטוק שמביא לקוחות" },
-      { icon: TrendingUp, text: "קמפיינים בגוגל שמביאים פניות אמיתיות לעסק" },
-      { icon: Globe, text: "רילס, סטוריז ותוכן שגורם לאנשים לעצור ולהקליק" },
+      { icon: Megaphone, text: "פרסום באינסטגרם, פייסבוק וטיקטוק שמביא המרות מכל סוג" },
+      { icon: TrendingUp, text: "קמפיינים ממומנים בגוגל שמביאים לידים" },
+      { icon: Globe, text: "קידום אורגני לאתרים ולרשתות החברתיות – נוכחות שצומחת מתוך תוכן, לא רק מתקציב" },
     ],
     tags: ["Instagram", "TikTok", "Facebook", "Google"],
     tagHue: 18,
@@ -19,6 +20,7 @@ const services = [
   {
     icon: Infinity,
     title: "עסק על טייס אוטומטי",
+    verse: undefined as string | undefined,
     subtitle: "Business Automation",
     bullets: [
       { icon: Zap, text: "הודעות ללקוחות נשלחות אוטומטית בוואטסאפ ובמייל" },
@@ -31,6 +33,7 @@ const services = [
   {
     icon: Brain,
     title: "טכנולוגיית העתיד",
+    verse: undefined as string | undefined,
     subtitle: "AI & Development",
     bullets: [
       { icon: Bot, text: "צ׳אטבוט חכם שעונה ללקוחות 24/7 במקומך" },
@@ -72,6 +75,9 @@ const ServiceCard = ({
           <service.icon className="w-6 h-6 text-primary-foreground" />
         </motion.div>
         <div className="flex-1 min-w-0">
+          {service.verse && (
+            <p className="text-[10px] text-primary/60 italic mb-0.5">{service.verse}</p>
+          )}
           <h3 className="text-lg font-bold copper-gradient-text-shimmer leading-tight">
             {service.title}
           </h3>
