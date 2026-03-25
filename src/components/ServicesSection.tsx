@@ -20,6 +20,7 @@ const services = [
   {
     icon: Infinity,
     title: "עסק על טייס אוטומטי",
+    verse: undefined as string | undefined,
     subtitle: "Business Automation",
     bullets: [
       { icon: Zap, text: "הודעות ללקוחות נשלחות אוטומטית בוואטסאפ ובמייל" },
