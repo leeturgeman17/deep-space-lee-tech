@@ -73,6 +73,9 @@ const ServiceCard = ({
           <service.icon className="w-6 h-6 text-primary-foreground" />
         </motion.div>
         <div className="flex-1 min-w-0">
+          {service.verse && (
+            <p className="text-[10px] text-primary/60 italic mb-0.5">{service.verse}</p>
+          )}
           <h3 className="text-lg font-bold copper-gradient-text-shimmer leading-tight">
             {service.title}
           </h3>
