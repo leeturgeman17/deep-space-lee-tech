@@ -24,7 +24,7 @@ const services = [
     subtitle: "Business Automation",
     bullets: [
       { icon: Zap, text: "הודעות ללקוחות נשלחות אוטומטית בוואטסאפ ובמייל" },
-      { icon: BarChart3, text: "כל הלידים מסודרים במקום אחד – בלי אקסלים" },
+      { icon: Bot, text: "סוכני AI חכמים שעובדים בשבילך – מכירות, שירות ומענה ללקוחות" },
       { icon: Target, text: "תזכורות, מעקב ומענה – בלי שתצטרך לזכור כלום" },
     ],
     tags: ["WhatsApp", "אוטומציה", "ניהול לידים"],
