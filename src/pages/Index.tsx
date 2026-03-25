@@ -15,6 +15,7 @@ import AccessibilityWidget from "@/components/AccessibilityWidget";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import FloatingCTA from "@/components/FloatingCTA";
 import SiteLoader from "@/components/SiteLoader";
+import LeadPopup from "@/components/LeadPopup";
 
 const Index = () => {
   return (
