@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-import { PenTool, Zap, Layout, Play } from "lucide-react";
+import { PenTool, Zap, Layout, Bot, MapPin, ClipboardCheck, CalendarDays } from "lucide-react";
 
 const services = [
   { icon: PenTool, title: "עיצוב לוגו", desc: "Logo Design" },
   { icon: Zap, title: "קמפיין חד-פעמי", desc: "One-Time Ad" },
   { icon: Layout, title: "דף נחיתה", desc: "Landing Page" },
-  { icon: Play, title: "סרטון קריאייטיב", desc: "Creative Video" },
+  { icon: Bot, title: "בוט וואטסאפ בסיסי", desc: "WhatsApp Bot" },
+  { icon: MapPin, title: "גוגל לעסק", desc: "Google My Business" },
+  { icon: ClipboardCheck, title: "אבחון קמפיינים", desc: "Campaign Audit" },
+  { icon: CalendarDays, title: "תוכנית תוכן AI", desc: "AI Content Plan" },
 ];
 
 const ExpressServices = () => {
