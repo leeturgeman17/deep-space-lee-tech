@@ -39,6 +39,7 @@ const Index = () => {
       <FloatingWhatsApp />
       <FloatingCTA />
       <AccessibilityWidget />
+      <LeadPopup />
     </div>
   );
 };
