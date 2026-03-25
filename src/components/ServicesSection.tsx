@@ -6,12 +6,13 @@ import ParallaxBg from "./ParallaxBg";
 const services = [
   {
     icon: Target,
-    title: "שליטה בזירה",
-    subtitle: "Marketing 360°",
+    title: "זורעים וקוצרים",
+    verse: "הזורעים בדמעה ברינה יקצורו",
+    subtitle: "קמפיינים ממוקדים שפוגעים בול",
     bullets: [
-      { icon: Megaphone, text: "פרסום באינסטגרם, פייסבוק וטיקטוק שמביא לקוחות" },
-      { icon: TrendingUp, text: "קמפיינים בגוגל שמביאים פניות אמיתיות לעסק" },
-      { icon: Globe, text: "רילס, סטוריז ותוכן שגורם לאנשים לעצור ולהקליק" },
+      { icon: Megaphone, text: "פרסום באינסטגרם, פייסבוק וטיקטוק שמביא המרות מכל סוג" },
+      { icon: TrendingUp, text: "קמפיינים ממומנים בגוגל שמביאים לידים" },
+      { icon: Globe, text: "קידום אורגני לאתרים ולרשתות החברתיות – נוכחות שצומחת מתוך תוכן, לא רק מתקציב" },
     ],
     tags: ["Instagram", "TikTok", "Facebook", "Google"],
     tagHue: 18,
