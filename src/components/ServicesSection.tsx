@@ -33,6 +33,7 @@ const services = [
   {
     icon: Brain,
     title: "טכנולוגיית העתיד",
+    verse: undefined as string | undefined,
     subtitle: "AI & Development",
     bullets: [
       { icon: Bot, text: "צ׳אטבוט חכם שעונה ללקוחות 24/7 במקומך" },
