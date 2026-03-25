@@ -27,7 +27,7 @@ const Index = () => {
         <ServicesSection />
         <TechStackSection />
         <ExpressServices />
-        <StatsStrip />
+        
         <WhyLeeTech />
         <ProcessTimeline />
         <FAQSection />
