@@ -19,8 +19,8 @@ const services = [
   },
   {
     icon: Infinity,
-    title: "עסק על טייס אוטומטי",
-    verse: undefined as string | undefined,
+    title: "צוות שעובד בשבילך 24/6",
+    verse: "ויומם ולילה לא ישבתו",
     subtitle: "Business Automation",
     bullets: [
       { icon: Zap, text: "הודעות ללקוחות נשלחות אוטומטית בוואטסאפ ובמייל" },
