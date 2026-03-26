@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, MessageCircle, Gift, ArrowLeft } from "lucide-react";
+import { X, ArrowLeft, Crosshair } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 const LeadPopup = () => {
