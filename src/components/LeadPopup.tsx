@@ -24,7 +24,7 @@ const LeadPopup = () => {
   const handleSubmit = () => {
     if (!name.trim() || !phone.trim()) return;
     const text = encodeURIComponent(
-      `🎁 ליד חדש מהאתר!\n\nשם: ${name}\nטלפון: ${phone}\n\nמעוניין/ת בייעוץ חינמי`
+      `📋 פנייה חדשה מהאתר!\n\nשם: ${name}\nטלפון: ${phone}\n\nמעוניין/ת באפיון והצעת מחיר`
     );
     window.open(`https://wa.me/972587619264?text=${text}`, "_blank");
     setSubmitted(true);
