@@ -56,6 +56,12 @@ const ContactSection = () => {
             <span className="copper-gradient-text-shimmer">דברו איתנו</span>
           </motion.h2>
 
+          <p className="text-center text-sm text-muted-foreground mb-6">
+            <a href="mailto:leetechdigital@gmail.com" className="hover:text-primary transition-colors">
+              leetechdigital@gmail.com
+            </a>
+          </p>
+
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 30 }}

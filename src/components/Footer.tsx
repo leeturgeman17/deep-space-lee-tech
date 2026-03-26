@@ -24,12 +24,12 @@ const Footer = () => {
             058-761-9264
           </motion.a>
           <motion.a
-            href="mailto:info@leetech.co.il"
+            href="mailto:leetechdigital@gmail.com"
             className="inline-flex items-center gap-2 hover:text-primary transition-colors"
             whileHover={{ scale: 1.05 }}
           >
             <Mail className="w-4 h-4 text-primary" />
-            info@leetech.co.il
+            leetechdigital@gmail.com
           </motion.a>
         </div>
 
