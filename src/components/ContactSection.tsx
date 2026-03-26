@@ -56,11 +56,16 @@ const ContactSection = () => {
             <span className="copper-gradient-text-shimmer">דברו איתנו</span>
           </motion.h2>
 
-          <p className="text-center text-sm text-muted-foreground mb-6">
-            <a href="mailto:leetechdigital@gmail.com" className="hover:text-primary transition-colors">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-6">
+            <a href="tel:+972587619264" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Phone className="w-4 h-4" />
+              <span dir="ltr">058-761-9264</span>
+            </a>
+            <a href="mailto:leetechdigital@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Mail className="w-4 h-4" />
               leetechdigital@gmail.com
             </a>
-          </p>
+          </div>
 
           <motion.form
             onSubmit={handleSubmit}
