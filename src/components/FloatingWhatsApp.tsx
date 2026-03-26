@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+// WhatsApp SVG icon used instead of lucide
 import { motion } from "framer-motion";
 
 const FloatingWhatsApp = () => {
