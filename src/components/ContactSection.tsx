@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Phone, User, MessageSquare } from "lucide-react";
+import { Send, Phone, User, MessageSquare, Mail } from "lucide-react";
 import ParallaxBg from "./ParallaxBg";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
