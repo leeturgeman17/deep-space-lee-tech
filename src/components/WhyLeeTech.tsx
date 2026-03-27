@@ -4,7 +4,7 @@ import { Headset, Eye, Cpu, TrendingUp } from "lucide-react";
 const benefits = [
   { icon: Headset, title: "מענה 24/7", desc: "מערכות שעובדות מסביב לשעון." },
   { icon: Eye, title: "משא ומתן באמונה", desc: "אנחנו דוגלים בנשאת ונתת באמונה." },
-  { icon: Cpu, title: "טכנולוגיה מתקדמת", desc: "AI וכלים חדשניים לעסק שלך." },
+  { icon: Cpu, title: "חכמה, בינה ודעת", desc: "חיבור בין 'בינת' המכונה ל'דעת' האנושית. אנחנו רותמים את ה-AI לבניית פתרונות חכמים, יצירת תוכן (UGC) ואפיון מדויק שמביא לחיסכון אדיר בעסק.", highlightWord: "בינה" },
   { icon: TrendingUp, title: "תוצאות מוכחות", desc: "עשרות עסקים שכבר שדרגו." },
 ];
 
