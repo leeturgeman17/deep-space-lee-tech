@@ -38,10 +38,21 @@ const WhyLeeTech = () => {
               {/* Right accent strip */}
               <div className="absolute top-0 right-0 w-1 h-full copper-gradient-bg opacity-60 group-hover:opacity-100 transition-opacity" />
 
-              <div className="mx-auto mb-3 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+              <div className={`mx-auto mb-3 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors ${b.glowIcon ? 'shadow-[0_0_16px_hsl(var(--primary)/0.5)]' : ''}`}>
                 <b.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-bold text-sm mb-1">{b.title}</h3>
+              <h3 className="font-bold text-sm mb-1">
+                {b.highlightWord
+                  ? b.title.split(b.highlightWord).map((part, idx, arr) => (
+                      <span key={idx}>
+                        {part}
+                        {idx < arr.length - 1 && (
+                          <span className="text-primary">{b.highlightWord}</span>
+                        )}
+                      </span>
+                    ))
+                  : b.title}
+              </h3>
               <div className="w-8 h-[1px] bg-primary/30 mx-auto mb-1" />
               <p className="text-muted-foreground text-xs leading-relaxed">{b.desc}</p>
             </motion.div>
