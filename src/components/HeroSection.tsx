@@ -1,4 +1,3 @@
-import { Flame } from "lucide-react";
 import { motion } from "framer-motion";
 import logo from "@/assets/leetech-logo-new.png";
 
