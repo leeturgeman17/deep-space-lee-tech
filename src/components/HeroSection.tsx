@@ -1,31 +1,14 @@
 import { motion } from "framer-motion";
 import logo from "@/assets/leetech-logo-new.png";
 
-const WordReveal = ({ words, className }: { words: string[]; className?: string }) => (
-  <span className={className}>
-    {words.map((word, i) => (
-      <motion.span
-        key={i}
-        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.5, delay: 0.8 + i * 0.15 }}
-        className="inline-block mx-1"
-      >
-        {word}
-      </motion.span>
-    ))}
-  </span>
-);
-
 const HeroSection = () => {
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center pt-20 pb-6 px-4">
       <div className="text-center max-w-lg mx-auto">
-        {/* Animated Logo with burning bush fire effect */}
         <motion.div
-          initial={{ opacity: 0, scale: 0, rotate: -180 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, type: "spring", damping: 10, stiffness: 100 }}
+          initial={{ opacity: 0, scale: 0.9, y: 16 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-6 inline-block"
         >
           <img
@@ -35,7 +18,6 @@ const HeroSection = () => {
           />
         </motion.div>
 
-        {/* Tagline with word reveal */}
         <motion.h1
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
