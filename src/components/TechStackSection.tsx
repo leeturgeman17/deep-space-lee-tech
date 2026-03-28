@@ -7,36 +7,31 @@ const techCards = [
     icon: MessageSquare,
     title: "ManyChat",
     subtitle: "הופכים מעורבות ללידים",
-    description:
-      "מענה אוטומטי ומיידי לכל תגובה או הודעה באינסטגרם ובפייסבוק. הלקוח הגיב? הוא מיד מקבל הודעה אישית עם הצעה לפרטים. ככה לא מפספסים אף פנייה.",
+    description: "מענה אוטומטי לכל תגובה או הודעה – הלקוח הגיב? הוא מיד מקבל הצעה אישית.",
   },
   {
     icon: Brain,
     title: "סוכני AI חכמים",
-    subtitle: "צוות שעובד 24/7",
-    description:
-      "נציג וירטואלי שקורא את הנהלים שלכם, מבין עניין, ויודע לנהל שיחות מכירה ושירות מורכבות עם לקוחות, בדיוק כמו נציג אנושי – רק בלי לצאת להפסקות.",
+    subtitle: "צוות שעובד 24/6",
+    description: "נציג וירטואלי שמנהל שיחות מכירה ושירות מורכבות – בדיוק כמו נציג אנושי.",
   },
   {
     icon: Network,
     title: "תשתיות n8n",
     subtitle: "העסק על טייס אוטומטי",
-    description:
-      'ה"צנרת" החכמה שמחברת בין כל המערכות שלכם (אתר, וואטסאפ, יומן, CRM). הנתונים זורמים חלק, הכל מסתנכרן לבד, באפס תקלות ובלי מגע יד אדם.',
+    description: "מחברים את כל המערכות שלכם – הנתונים זורמים חלק, הכל מסתנכרן לבד.",
   },
   {
     icon: Terminal,
     title: "הנדסת פרומפטים",
     subtitle: "100% נתוני אמת",
-    description:
-      "ההבדל בין AI שממציא דברים ל-AI שעובד כמו שעון. אנחנו מקודדים את הבינה המלאכותית שלכם כך שתהיה מחויבת לאמת העסקית שלכם בלבד, בלי סטיות.",
+    description: "AI שמחויב לאמת העסקית שלכם בלבד, בלי סטיות ובלי המצאות.",
   },
   {
     icon: TrendingUp,
     title: "למידת מכונה (ML)",
     subtitle: "קמפיינים שמשתפרים בעצמם",
-    description:
-      "המוח שמאחורי הקמפיינים הממומנים שלנו. האלגוריתמים לומדים את הקהל שלכם בזמן אמת, ויודעים לרדוף בדיוק אחרי האנשים עם הסיכוי הגבוה ביותר לקנות.",
+    description: "אלגוריתמים שרודפים בדיוק אחרי מי שהכי צפוי לקנות.",
   },
 ];
 
@@ -64,7 +59,7 @@ const TechStackSection = () => {
             הטכנולוגיות שמניעות את העסק שלך קדימה
           </motion.p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-3">
             {techCards.map((card, i) => (
               <motion.div
                 key={card.title}
@@ -72,24 +67,24 @@ const TechStackSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`group glass-card p-5 border border-border/30 transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_20px_hsl(var(--primary)/0.15)] ${
+                className={`group glass-card p-3 sm:p-5 border border-border/30 transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_20px_hsl(var(--primary)/0.15)] ${
                   i === techCards.length - 1 && techCards.length % 2 !== 0
-                    ? "sm:col-span-2 sm:max-w-md sm:mx-auto"
+                    ? "col-span-2 max-w-[200px] sm:max-w-md mx-auto"
                     : ""
                 }`}
               >
-                <div className="flex items-start gap-4">
-                  <div className="shrink-0 w-10 h-10 rounded-xl copper-gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <card.icon className="w-5 h-5 text-primary-foreground" />
+                <div className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-right gap-2 sm:gap-4">
+                  <div className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-xl copper-gradient-bg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <card.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-foreground leading-tight">
+                    <h3 className="text-sm sm:text-base font-bold text-foreground leading-tight">
                       {card.title}
                     </h3>
-                    <p className="text-xs font-semibold text-primary mt-0.5">
+                    <p className="text-[10px] sm:text-xs font-semibold text-primary mt-0.5">
                       {card.subtitle}
                     </p>
-                    <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-muted-foreground mt-1 leading-relaxed">
                       {card.description}
                     </p>
                   </div>

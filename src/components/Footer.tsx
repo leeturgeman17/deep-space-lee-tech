@@ -1,16 +1,9 @@
-import { Instagram, Facebook, Linkedin, Phone, Mail } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import { motion } from "framer-motion";
-
-const socials = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-];
 
 const Footer = () => {
   return (
     <footer className="relative py-12 border-t border-border/30">
-      {/* Subtle top gradient */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-l from-transparent via-primary/30 to-transparent" />
 
       <div className="max-w-4xl mx-auto px-4 text-center space-y-5">
@@ -45,21 +38,10 @@ const Footer = () => {
 
         <p className="text-xs text-muted-foreground/50 mt-2">בשם ה׳ נעשה ונצליח</p>
 
-        <div className="flex justify-center gap-4 pt-2">
-          {socials.map((s) => (
-            <motion.a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={s.label}
-              className="w-9 h-9 rounded-full border border-primary/30 flex items-center justify-center hover:bg-primary/10 hover:border-primary/60 transition-all"
-              whileHover={{ scale: 1.15, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <s.icon className="w-4 h-4 text-primary" />
-            </motion.a>
-          ))}
+        {/* Logo + Slogan */}
+        <div className="pt-4 flex flex-col items-center gap-1">
+          <span className="copper-gradient-text-shimmer font-black text-lg">LeeTech</span>
+          <span className="text-xs text-muted-foreground">שיווק · מערכות · סדר</span>
         </div>
       </div>
     </footer>
