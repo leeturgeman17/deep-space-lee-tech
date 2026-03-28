@@ -51,20 +51,28 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 text-center"
+            className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-center"
           >
-            <span className="copper-gradient-text-shimmer">דברו איתנו</span>
+            <span className="copper-gradient-text-shimmer text-3xl md:text-5xl">נשמח שתצרו איתנו קשר</span>
           </motion.h2>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-6">
-            <a href="tel:+972587619264" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-              <Phone className="w-4 h-4" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-8">
+            <motion.a
+              href="tel:+972587619264"
+              className="flex items-center gap-2 text-base md:text-lg font-bold text-foreground hover:text-primary transition-colors"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Phone className="w-5 h-5 text-primary" />
               <span dir="ltr">058-761-9264</span>
-            </a>
-            <a href="mailto:leetechdigital@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-              <Mail className="w-4 h-4" />
+            </motion.a>
+            <motion.a
+              href="mailto:leetechdigital@gmail.com"
+              className="flex items-center gap-2 text-base md:text-lg font-bold text-foreground hover:text-primary transition-colors"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Mail className="w-5 h-5 text-primary" />
               leetechdigital@gmail.com
-            </a>
+            </motion.a>
           </div>
 
           <motion.form

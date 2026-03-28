@@ -108,7 +108,7 @@ const ProcessTimeline = () => {
           </motion.h2>
 
           <div className="relative flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-0 justify-between">
-            <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-[2px] bg-gradient-to-l from-primary/60 via-primary/30 to-primary/60" />
+            <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-[3px] bg-gradient-to-l from-primary via-primary/60 to-primary shadow-[0_0_8px_hsl(var(--primary)/0.4)]" />
 
             {steps.map((step, i) => (
               <motion.div

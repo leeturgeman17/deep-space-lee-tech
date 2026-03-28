@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Headset, Eye, Cpu, TrendingUp } from "lucide-react";
 
 const benefits = [
-  { icon: Headset, title: "מענה 24/7", desc: "מערכות שעובדות מסביב לשעון." },
+  { icon: Headset, title: "מענה 24/6", desc: "איתכם תמיד" },
   { icon: Eye, title: "משא ומתן באמונה", desc: "אנחנו דוגלים בנשאת ונתת באמונה." },
   { icon: Cpu, title: "חכמה, בינה ודעת", desc: "חיבור בין 'בינת' המכונה ל'דעת' האנושית. אנחנו רותמים את ה-AI לבניית פתרונות חכמים, יצירת תוכן (UGC) ואפיון מדויק שמביא לחיסכון אדיר בעסק.", highlightWord: "בינה", glowIcon: true },
   { icon: TrendingUp, title: "תוצאות מוכחות", desc: "עשרות עסקים שכבר שדרגו." },
@@ -35,7 +35,6 @@ const WhyLeeTech = () => {
               whileHover={{ y: -4, scale: 1.02 }}
               className="glass-card p-4 text-center relative overflow-hidden group"
             >
-              {/* Right accent strip */}
               <div className="absolute top-0 right-0 w-1 h-full copper-gradient-bg opacity-60 group-hover:opacity-100 transition-opacity" />
 
               <div className={`mx-auto mb-3 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors ${b.glowIcon ? 'shadow-[0_0_16px_hsl(var(--primary)/0.5)]' : ''}`}>
