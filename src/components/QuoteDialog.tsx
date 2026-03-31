@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowLeft, ArrowRight, Send, Building2, Users, Target, Wallet, MessageCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -40,6 +41,7 @@ interface QuoteDialogProps {
 }
 
 const QuoteDialog = ({ open, onClose }: QuoteDialogProps) => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({
     businessType: "",
@@ -74,6 +76,7 @@ const QuoteDialog = ({ open, onClose }: QuoteDialogProps) => {
     onClose();
     setStep(0);
     setAnswers({ businessType: "", goal: "", budget: "", name: "", phone: "", notes: "", honeypot: "" });
+    navigate("/thanks");
   };
 
   const next = () => {

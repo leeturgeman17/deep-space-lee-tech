@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Send, Phone, User, MessageSquare, Mail } from "lucide-react";
 import ParallaxBg from "./ParallaxBg";
@@ -8,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [form, setForm] = useState({ name: "", phone: "", message: "", honeypot: "" });
   const [sending, setSending] = useState(false);
 
@@ -41,7 +43,7 @@ const ContactSection = () => {
     setTimeout(() => {
       setSending(false);
       setForm({ name: "", phone: "", message: "", honeypot: "" });
-      toast({ title: "נשלח בהצלחה!", description: "נחזור אליך בהקדם 🚀" });
+      navigate("/thanks");
     }, 1000);
   };
 
