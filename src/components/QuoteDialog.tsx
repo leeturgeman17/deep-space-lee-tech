@@ -105,9 +105,21 @@ const QuoteDialog = ({ open, onClose }: QuoteDialogProps) => {
             className="relative glass-card w-full max-w-md p-8 z-10"
             onClick={(e) => e.stopPropagation()}
           >
-            <button onClick={onClose} className="absolute top-4 left-4 text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={onClose} className="absolute top-4 left-4 text-muted-foreground hover:text-foreground transition-colors" aria-label="סגירה">
               <X className="w-5 h-5" />
             </button>
+
+            {/* Honeypot field */}
+            <input
+              type="text"
+              name="company_url"
+              value={answers.honeypot}
+              onChange={(e) => setAnswers({ ...answers, honeypot: e.target.value })}
+              className="absolute opacity-0 h-0 w-0 overflow-hidden pointer-events-none"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
 
             {/* Progress bar */}
             <div className="flex gap-1.5 mb-8">

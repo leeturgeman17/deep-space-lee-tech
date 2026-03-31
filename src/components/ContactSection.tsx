@@ -86,6 +86,17 @@ const ContactSection = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="glass-card p-5 md:p-10 space-y-4 md:space-y-5"
           >
+            {/* Honeypot field - hidden from users, catches bots */}
+            <input
+              type="text"
+              name="website"
+              value={form.honeypot}
+              onChange={(e) => setForm({ ...form, honeypot: e.target.value })}
+              className="absolute opacity-0 h-0 w-0 overflow-hidden pointer-events-none"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
             <div className="relative group">
               <User className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground transition-colors group-focus-within:text-primary" />
               <Input
