@@ -48,6 +48,7 @@ const QuoteDialog = ({ open, onClose }: QuoteDialogProps) => {
     name: "",
     phone: "",
     notes: "",
+    honeypot: "",
   });
 
   const current = steps[step];
