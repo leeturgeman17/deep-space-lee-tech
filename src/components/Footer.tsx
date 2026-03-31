@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="flex justify-center gap-4 text-xs text-muted-foreground/60">
           <span className="hover:text-primary cursor-pointer transition-colors">הצהרת נגישות</span>
           <span>|</span>
-          <span className="hover:text-primary cursor-pointer transition-colors">מדיניות פרטיות</span>
+          <a href="/privacy" className="hover:text-primary cursor-pointer transition-colors">מדיניות פרטיות</a>
         </div>
 
         <p className="text-xs text-muted-foreground/50 mt-2">בשם ה׳ נעשה ונצליח</p>

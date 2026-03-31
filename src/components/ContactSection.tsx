@@ -43,7 +43,7 @@ const ContactSection = () => {
     setTimeout(() => {
       setSending(false);
       setForm({ name: "", phone: "", message: "", honeypot: "" });
-      toast({ title: "נשלח בהצלחה!", description: "נחזור אליך בהקדם 🚀" });
+      navigate("/thanks");
     }, 1000);
   };
 
