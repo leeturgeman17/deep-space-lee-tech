@@ -146,7 +146,7 @@ const TestimonialsSection = () => {
             viewport={{ once: true }}
             className="text-lg md:text-xl font-bold mb-6 copper-gradient-text"
           >
-            📸 משובים אמיתיים מהשטח
+            📸 צילומי מסך אמיתיים מהשטח
           </motion.h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
