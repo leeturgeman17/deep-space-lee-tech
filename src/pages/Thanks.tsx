@@ -1,15 +1,8 @@
 import { motion } from "framer-motion";
-import { AlertTriangle, ArrowRight } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { CheckCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
-
+const Thanks = () => {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4" dir="rtl">
       <motion.div
@@ -22,15 +15,17 @@ const NotFound = () => {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-          className="w-20 h-20 rounded-full bg-secondary flex items-center justify-center mx-auto"
+          className="w-20 h-20 rounded-full copper-gradient-bg flex items-center justify-center mx-auto"
         >
-          <AlertTriangle className="w-10 h-10 text-primary" />
+          <CheckCircle className="w-10 h-10 text-primary-foreground" />
         </motion.div>
 
-        <h1 className="text-5xl font-black copper-gradient-text-shimmer">404</h1>
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground">
+          תודה רבה!
+        </h1>
 
         <p className="text-muted-foreground text-base leading-relaxed">
-          אופס, נראה שסטינו מהמסלול... אל דאגה, אנחנו מחזירים אתכם למסלול הצמיחה.
+          הפרטים התקבלו בברכה! נחזור אליכם בהקדם לשיחת אפיון.
         </p>
 
         <Link to="/">
@@ -40,7 +35,7 @@ const NotFound = () => {
             className="copper-gradient-bg text-primary-foreground font-bold px-8 py-3 rounded-full inline-flex items-center gap-2 mt-4"
           >
             <ArrowRight className="w-5 h-5" />
-            חזרה לבית
+            חזרה לדף הבית
           </motion.button>
         </Link>
       </motion.div>
@@ -48,4 +43,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default Thanks;
