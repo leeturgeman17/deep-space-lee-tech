@@ -72,7 +72,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1.5 }}
           className="text-sm md:text-lg text-foreground font-bold mb-8 max-w-md mx-auto leading-relaxed px-2"
         >
-          העסק שלך על טייס אוטומטי. חשיפה חכמה, שירות 24/7, ונכסים דיגיטליים שבאמת מוכרים.
+          העסק שלך על טייס אוטומטי. חשיפה חכמה, שירות 24/6, ונכסים דיגיטליים שבאמת מוכרים.
         </motion.p>
       </div>
     </section>
