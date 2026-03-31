@@ -65,6 +65,8 @@ const QuoteDialog = ({ open, onClose }: QuoteDialogProps) => {
   };
 
   const handleSubmit = () => {
+    // Honeypot spam protection
+    if (answers.honeypot) return;
     const text = encodeURIComponent(
       `🔥 בקשת הצעת מחיר חדשה\n\nסוג עסק: ${answers.businessType}\nמטרה: ${answers.goal}\nתקציב: ${answers.budget}\nשם: ${answers.name}\nטלפון: ${answers.phone}${answers.notes ? `\nהערות: ${answers.notes}` : ""}`
     );
