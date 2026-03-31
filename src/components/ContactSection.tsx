@@ -8,11 +8,14 @@ import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", message: "", honeypot: "" });
   const [sending, setSending] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot spam protection
+    if (form.honeypot) return;
 
     const trimmedName = form.name.trim();
     const trimmedPhone = form.phone.trim();
