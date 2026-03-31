@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [form, setForm] = useState({ name: "", phone: "", message: "", honeypot: "" });
   const [sending, setSending] = useState(false);
 
