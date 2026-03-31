@@ -73,7 +73,7 @@ const QuoteDialog = ({ open, onClose }: QuoteDialogProps) => {
     window.open(`https://wa.me/972587619264?text=${text}`, "_blank");
     onClose();
     setStep(0);
-    setAnswers({ businessType: "", goal: "", budget: "", name: "", phone: "", notes: "" });
+    setAnswers({ businessType: "", goal: "", budget: "", name: "", phone: "", notes: "", honeypot: "" });
   };
 
   const next = () => {
