@@ -140,14 +140,6 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Real Feedback Screenshots */}
-          <motion.h3
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-lg md:text-xl font-bold mb-6 copper-gradient-text"
-          >
-            📸 צילומי מסך אמיתיים מהשטח
-          </motion.h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {screenshots.map((img, i) => (
