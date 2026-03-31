@@ -48,6 +48,7 @@ const QuoteDialog = ({ open, onClose }: QuoteDialogProps) => {
     name: "",
     phone: "",
     notes: "",
+    honeypot: "",
   });
 
   const current = steps[step];
@@ -64,13 +65,15 @@ const QuoteDialog = ({ open, onClose }: QuoteDialogProps) => {
   };
 
   const handleSubmit = () => {
+    // Honeypot spam protection
+    if (answers.honeypot) return;
     const text = encodeURIComponent(
       `🔥 בקשת הצעת מחיר חדשה\n\nסוג עסק: ${answers.businessType}\nמטרה: ${answers.goal}\nתקציב: ${answers.budget}\nשם: ${answers.name}\nטלפון: ${answers.phone}${answers.notes ? `\nהערות: ${answers.notes}` : ""}`
     );
     window.open(`https://wa.me/972587619264?text=${text}`, "_blank");
     onClose();
     setStep(0);
-    setAnswers({ businessType: "", goal: "", budget: "", name: "", phone: "", notes: "" });
+    setAnswers({ businessType: "", goal: "", budget: "", name: "", phone: "", notes: "", honeypot: "" });
   };
 
   const next = () => {
@@ -102,9 +105,21 @@ const QuoteDialog = ({ open, onClose }: QuoteDialogProps) => {
             className="relative glass-card w-full max-w-md p-8 z-10"
             onClick={(e) => e.stopPropagation()}
           >
-            <button onClick={onClose} className="absolute top-4 left-4 text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={onClose} className="absolute top-4 left-4 text-muted-foreground hover:text-foreground transition-colors" aria-label="סגירה">
               <X className="w-5 h-5" />
             </button>
+
+            {/* Honeypot field */}
+            <input
+              type="text"
+              name="company_url"
+              value={answers.honeypot}
+              onChange={(e) => setAnswers({ ...answers, honeypot: e.target.value })}
+              className="absolute opacity-0 h-0 w-0 overflow-hidden pointer-events-none"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
 
             {/* Progress bar */}
             <div className="flex gap-1.5 mb-8">
