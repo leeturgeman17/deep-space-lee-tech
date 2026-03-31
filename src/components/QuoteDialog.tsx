@@ -76,6 +76,7 @@ const QuoteDialog = ({ open, onClose }: QuoteDialogProps) => {
     onClose();
     setStep(0);
     setAnswers({ businessType: "", goal: "", budget: "", name: "", phone: "", notes: "", honeypot: "" });
+    navigate("/thanks");
   };
 
   const next = () => {
