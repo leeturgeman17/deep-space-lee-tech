@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { AlertTriangle, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,6 +13,12 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4" dir="rtl">
+      <Helmet>
+        <title>הדף לא נמצא (404) | LeeTech</title>
+        <meta name="description" content="הדף שחיפשת לא קיים. חזור לדף הבית של LeeTech כדי להמשיך לגלות את השירותים שלנו." />
+        <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://leetechdigital.com/404" />
+      </Helmet>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

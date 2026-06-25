@@ -1,10 +1,19 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background py-20 px-4" dir="rtl">
+      <Helmet>
+        <title>מדיניות פרטיות | LeeTech</title>
+        <meta name="description" content="מדיניות הפרטיות של LeeTech: כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלך באתר ובטופסי יצירת הקשר." />
+        <link rel="canonical" href="https://leetechdigital.com/privacy" />
+        <meta property="og:title" content="מדיניות פרטיות | LeeTech" />
+        <meta property="og:description" content="כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלך." />
+        <meta property="og:url" content="https://leetechdigital.com/privacy" />
+      </Helmet>
       <div className="container max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
