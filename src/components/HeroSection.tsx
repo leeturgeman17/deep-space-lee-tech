@@ -13,7 +13,7 @@ const HeroSection = () => {
         >
           <img
             src={logo}
-            alt="LeeTech"
+            alt="LeeTech — שיווק דיגיטלי, אוטומציה ו-AI"
             className="h-24 sm:h-32 md:h-40 w-auto mx-auto"
           />
         </motion.div>

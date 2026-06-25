@@ -64,7 +64,7 @@ const Header = () => {
           >
             <img
               src={logo}
-              alt="LeeTech"
+              alt="LeeTech — שיווק דיגיטלי ואוטומציה"
               className="h-12 w-auto cursor-pointer hover:opacity-80 transition-opacity"
             />
           </a>
@@ -78,7 +78,7 @@ const Header = () => {
             >
               <img
                 src={logo}
-                alt="LeeTech"
+                alt="LeeTech — שיווק דיגיטלי ואוטומציה"
                 className="h-11 w-auto cursor-pointer hover:opacity-80 transition-opacity"
               />
             </a>

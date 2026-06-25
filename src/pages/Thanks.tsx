@@ -1,10 +1,20 @@
 import { motion } from "framer-motion";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Thanks = () => {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4" dir="rtl">
+      <Helmet>
+        <title>תודה! קיבלנו את פנייתך | LeeTech</title>
+        <meta name="description" content="הפרטים התקבלו בברכה. צוות LeeTech יחזור אליך בהקדם לשיחת אפיון ראשונית." />
+        <link rel="canonical" href="https://leetechdigital.com/thanks" />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:title" content="תודה! קיבלנו את פנייתך | LeeTech" />
+        <meta property="og:description" content="הפרטים התקבלו בברכה. נחזור אליך בהקדם לשיחת אפיון." />
+        <meta property="og:url" content="https://leetechdigital.com/thanks" />
+      </Helmet>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
