@@ -6,54 +6,56 @@
 
 @layer base {
   :root {
-    --background: 0 0% 45%;
-    --foreground: 0 0% 90%;
+    /* Editorial light theme — white canvas, black ink, cobalt accent */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 90%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 90%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 18 100% 50%;
+    /* Cobalt blue accent — #2563EB */
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 7%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 18 100% 50%;
+    --accent: 221 83% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 12%;
-    --ring: 18 100% 50%;
+    --border: 0 0% 90%;
+    --input: 0 0% 92%;
+    --ring: 221 83% 53%;
 
     --radius: 0.75rem;
 
-    --copper-start: 18 100% 50%;
-    --copper-end: 24 100% 53%;
-    --silver: 0 0% 88%;
-    --glass-bg: 0 0% 8%;
-    --glass-border: 0 0% 18%;
+    /* Repurposed accents: gradient now reads cobalt-blue, not copper */
+    --copper-start: 221 83% 53%;
+    --copper-end: 217 91% 60%;
+    --silver: 0 0% 8%;
+    --glass-bg: 0 0% 100%;
+    --glass-border: 0 0% 10%;
 
-    /* New accent colors */
-    --slate-accent: 215 20% 55%;
-    --warm-glow: 30 100% 60%;
+    --slate-accent: 215 20% 35%;
+    --warm-glow: 221 83% 60%;
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 88%;
-    --sidebar-primary: 18 100% 50%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 221 83% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 88%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 18 100% 50%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 221 83% 53%;
   }
 }
 
@@ -71,27 +73,9 @@
     direction: rtl;
   }
 
-  /* Noise texture overlay on body */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 256px 256px;
-  }
-
-  /* Vignette effect */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: radial-gradient(ellipse at center, transparent 50%, hsla(0, 0%, 0%, 0.4) 100%);
+  /* Hairline dividers between top-level sections inside <main> */
+  main > section + section {
+    border-top: 1px solid hsl(0 0% 0% / 0.08);
   }
 
   /* Typography hierarchy */
@@ -102,33 +86,28 @@
   p {
     line-height: 1.7;
   }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
 }
 
 @layer components {
-  /* Section alternating backgrounds */
   .section-alt {
     position: relative;
+    background: hsl(0 0% 98%);
   }
 
-  .section-alt::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: hsla(0, 0%, 0%, 0.08);
-    clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%);
-    pointer-events: none;
-  }
-
+  /* Paper-style "glass" card on the light theme */
   .glass-card {
     @apply relative overflow-hidden rounded-2xl;
-    background: hsla(0, 0%, 8%, 0.6);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid hsla(0, 0%, 20%, 0.4);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: hsl(0 0% 100%);
+    border: 1px solid hsl(0 0% 0% / 0.08);
+    box-shadow: 0 1px 0 hsl(0 0% 0% / 0.02), 0 8px 24px hsl(0 0% 0% / 0.04);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Subtle top reflection */
   .glass-card::before {
     content: "";
     position: absolute;
@@ -136,20 +115,20 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.08), transparent);
+    background: linear-gradient(90deg, transparent, hsla(221, 83%, 53%, 0.25), transparent);
     pointer-events: none;
     z-index: 1;
   }
 
   .glass-card:hover {
-    border-color: hsla(18, 100%, 50%, 0.5);
-    transform: translateY(-4px);
+    border-color: hsl(var(--primary));
+    transform: translateY(-3px);
     box-shadow:
-      0 0 20px hsla(18, 100%, 50%, 0.08),
-      0 20px 40px hsla(0, 0%, 0%, 0.3),
-      inset 0 1px 0 hsla(0, 0%, 100%, 0.05);
+      0 0 0 1px hsla(221, 83%, 53%, 0.15),
+      0 16px 40px hsla(221, 83%, 53%, 0.10);
   }
 
+  /* Gradient text — cobalt instead of copper */
   .copper-gradient-text {
     background: linear-gradient(135deg, hsl(var(--copper-start)), hsl(var(--copper-end)));
     -webkit-background-clip: text;
@@ -157,7 +136,6 @@
     background-clip: text;
   }
 
-  /* Shimmer animation for gradient text */
   .copper-gradient-text-shimmer {
     background: linear-gradient(
       135deg,
@@ -179,13 +157,13 @@
 
   .copper-gradient-bg {
     background: linear-gradient(135deg, hsl(var(--copper-start)), hsl(var(--copper-end)));
+    color: hsl(var(--primary-foreground));
   }
 
   .copper-glow {
-    box-shadow: 0 0 30px hsla(var(--copper-start), 0.3), 0 0 60px hsla(var(--copper-start), 0.1);
+    box-shadow: 0 0 24px hsla(221, 83%, 53%, 0.25), 0 0 48px hsla(221, 83%, 53%, 0.10);
   }
 
-  /* Shimmer border effect for cards */
   .shimmer-border {
     position: relative;
   }
@@ -198,7 +176,7 @@
     background: linear-gradient(
       135deg,
       transparent 30%,
-      hsla(18, 100%, 50%, 0.3) 50%,
+      hsla(221, 83%, 53%, 0.35) 50%,
       transparent 70%
     );
     background-size: 200% 200%;
@@ -212,7 +190,6 @@
     opacity: 1;
   }
 
-  /* Pulsing glow for stats */
   .pulse-glow {
     animation: pulseGlow 3s ease-in-out infinite;
   }
@@ -220,7 +197,7 @@
   .star {
     position: absolute;
     border-radius: 50%;
-    background: white;
+    background: hsl(var(--foreground));
     animation: twinkle var(--duration) ease-in-out infinite;
     opacity: 0;
   }
@@ -242,8 +219,8 @@
   }
 
   @keyframes pulseGlow {
-    0%, 100% { filter: drop-shadow(0 0 4px hsla(18, 100%, 50%, 0.2)); }
-    50% { filter: drop-shadow(0 0 16px hsla(18, 100%, 50%, 0.5)); }
+    0%, 100% { filter: drop-shadow(0 0 4px hsla(221, 83%, 53%, 0.20)); }
+    50% { filter: drop-shadow(0 0 16px hsla(221, 83%, 53%, 0.45)); }
   }
 
   @keyframes float {
